@@ -152,7 +152,7 @@ int Calculate(int rebirth) {
 					check = true;
 				}
 			};
-			if (check == false) {
+			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 100 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -163,8 +163,8 @@ int Calculate(int rebirth) {
 						check = true;
 					}
 				};
-			}
-			if (check == false) {
+			//}
+			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 45 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -175,8 +175,8 @@ int Calculate(int rebirth) {
 						check = true;
 					}
 				};
-			}
-			if (check == false) {
+			//}
+			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 30 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -187,8 +187,8 @@ int Calculate(int rebirth) {
 						check = true;
 					}
 				};
-			}
-			if (check == false) {
+			//}
+			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 15 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -199,8 +199,8 @@ int Calculate(int rebirth) {
 						check = true;
 					}
 				};
-			}
-			if (check == false) {
+			//}
+			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 8 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -211,8 +211,8 @@ int Calculate(int rebirth) {
 						check = true;
 					}
 				};
-			}
-			if (check == false) {
+			//}
+			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 3 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -223,8 +223,8 @@ int Calculate(int rebirth) {
 						check = true;
 					}
 				};
-			}
-			if (check == false) {
+			//}
+			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 2 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -235,8 +235,8 @@ int Calculate(int rebirth) {
 						check = true;
 					}
 				};
-			}
-			if (check == false) {
+			//}
+			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 1 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -247,7 +247,7 @@ int Calculate(int rebirth) {
 						check = true;
 					}
 				};
-			}
+			//}
 		}
 		xpAdded = xpAdded + 5;
 	}
@@ -263,10 +263,10 @@ int Calculate(int rebirth) {
 			for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 				if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
 					std::cout << "Your rebirth can glitch Muscle King Auras on the Muscle King Rock! Glitches at Level " << i + 1 << " [MUSCLE KING LEVEL " << index << "] [" << GetFormattedXp("Aura",MuscleKingXpAdded) << "]" << std::endl;
-					check = true;
+					MuscleKingCheck = true;
 				}
 			};
-			if (check == false) {
+			//if (MuscleKingCheck == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 100 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -274,11 +274,11 @@ int Calculate(int rebirth) {
 				for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
 						std::cout << "Your rebirth can glitch Muscle King Auras on the Legends Gym Rock! Glitches at Level " << i + 1 << " [MUSCLE KING LEVEL " << index << "] [" << GetFormattedXp("Aura",MuscleKingXpAdded) << "]" << std::endl;
-						check = true;
+						MuscleKingCheck = true;
 					}
 				};
-			}
-			if (check == false) {
+			//}
+			//if (MuscleKingCheck == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 45 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -286,11 +286,11 @@ int Calculate(int rebirth) {
 				for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
 						std::cout << "Your rebirth can glitch Muscle King Auras on the Eternal Gym Rock! Glitches at Level " << i + 1 << " [MUSCLE KING LEVEL " << index << "] [" << GetFormattedXp("Aura",MuscleKingXpAdded) << "]" << std::endl;
-						check = true;
+						MuscleKingCheck = true;
 					}
 				};
-			}
-			if (check == false) {
+			//}
+			//if (MuscleKingCheck == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 30 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -298,11 +298,11 @@ int Calculate(int rebirth) {
 				for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
 						std::cout << "Your rebirth can glitch Muscle King Auras on the Mythical Gym Rock! Glitches at Level " << i + 1 << " [MUSCLE KING LEVEL " << index << "] [" << GetFormattedXp("Aura",MuscleKingXpAdded) << "]" << std::endl;
-						check = true;
+						MuscleKingCheck = true;
 					}
 				};
-			}
-			if (check == false) {
+			//}
+			//if (MuscleKingCheck == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 15 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -310,11 +310,11 @@ int Calculate(int rebirth) {
 				for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
 						std::cout << "Your rebirth can glitch Muscle King Auras on the Frost Gym Rock! Glitches at Level " << i + 1 << " [MUSCLE KING LEVEL " << index << "] [" << GetFormattedXp("Aura",MuscleKingXpAdded) << "]" << std::endl;
-						check = true;
+						MuscleKingCheck = true;
 					}
 				};
-			}
-			if (check == false) {
+			//}
+			//if (MuscleKingCheck == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 8 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -322,11 +322,11 @@ int Calculate(int rebirth) {
 				for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
 						std::cout << "Your rebirth can glitch Muscle King Auras on the Golden Rock (5K Durability Rock)! Glitches at Level " << i + 1 << " [MUSCLE KING LEVEL " << index << "] [" << GetFormattedXp("Aura",MuscleKingXpAdded) << "]" << std::endl;
-						check = true;
+						MuscleKingCheck = true;
 					}
 				};
-			}
-			if (check == false) {
+			//}
+			//if (MuscleKingCheck == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 3 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -334,11 +334,11 @@ int Calculate(int rebirth) {
 				for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
 						std::cout << "Your rebirth can glitch Muscle King Auras on the Large Rock (100 Durability Rock)! Glitches at Level " << i + 1 << " [MUSCLE KING LEVEL " << index << "] [" << GetFormattedXp("Aura",MuscleKingXpAdded) << "]" << std::endl;
-						check = true;
+						MuscleKingCheck = true;
 					}
 				};
-			}
-			if (check == false) {
+			//}
+			//if (MuscleKingCheck == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 2 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -346,11 +346,11 @@ int Calculate(int rebirth) {
 				for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
 						std::cout << "Your rebirth can glitch Muscle King Auras on the Punching Rock (10 Durability Rock)! Glitches at Level " << i + 1 << " [MUSCLE KING LEVEL " << index << "] [" << GetFormattedXp("Aura",MuscleKingXpAdded) << "]" << std::endl;
-						check = true;
+						MuscleKingCheck = true;
 					}
 				};
-			}
-			if (check == false) {
+			//}
+			//if (MuscleKingCheck == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 1 / 2;
 				CalculatedXp = CalculatedXp * index;
@@ -358,10 +358,10 @@ int Calculate(int rebirth) {
 				for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
 						std::cout << "Your rebirth can glitch Muscle King Auras on the Tiny Gym Rock! Glitches at Level " << i + 1 << " [MUSCLE KING LEVEL " << index << "] [" << GetFormattedXp("Aura",MuscleKingXpAdded) << "]" << std::endl;
-						check = true;
+						MuscleKingCheck = true;
 					}
 				};
-			}
+			//}
 		}
 		MuscleKingXpAdded = MuscleKingXpAdded + 5;
 	}
@@ -386,7 +386,6 @@ int Calculate(int rebirth) {
 }
 
 int ListCalculate(int rebirth) {
-
 	// DARKSTARS 
 	for (int index = 1; index < 20; index++) {
 		float CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -543,7 +542,7 @@ int ListCalculate(int rebirth) {
 
 int main() {
 	HWND hwnd = GetConsoleWindow();
-	if (hwnd != NULL) { MoveWindow(hwnd, 100, 100, 1200, 600, TRUE); }
+	if (hwnd != NULL) { MoveWindow(hwnd, 100, 100, 1300, 600, TRUE); }
 	/*
 	std::cout << "Made By Cypher#2763 | https://discord.gg/3WJnU7tCGv\nRoblox User | SamTerraria10" << std::endl;
 	std::cout << "Type in -4 to list all Glitchable Rebirths,"<< std::endl;
@@ -552,19 +551,18 @@ int main() {
 	*/
 	int rebirth = 0;
 	while (true) {
-		std::cout << "Version 1.12, Keep the window at the automatic set size to ensure correct formatting.\n" << std::endl;
+		std::cout << "Version 1.14, Keep the window at the automatic set size to ensure correct formatting.\n" << std::endl;
 		std::cout << "This Program was Developed By: Cypher#2763 (Programmer), SiZzY#9158 and Codes_SoundzYT#6288" << std::endl;
 		std::cout << "Roblox Users | SamTerraria10 (Cypher), S1ZzYChEeKs and Codes_SoundzYT\n" << std::endl;
 		std::cout << "Type rebirth here: ";
 		std::cin >> rebirth;
 		if (rebirth == -4) {
-			std::cout << "\nYou may experience lag at the last calculating Rebirths..." << std::endl;
+			std::cout << "\nYou may experience a slow down at the last calculating Rebirths..." << std::endl;
 			for (int i = 0; i < 12600000; i++) {
 				ListCalculate(i);
 			};
 			std::system("pause");
 			std::system("CLS");
-			std::cout << "Made By Cypher#2763 | https://discord.gg/3WJnU7tCGv\nRoblox User | SamTerraria10" << std::endl;
 		}
 		std::cout << "Calculating..." << std::endl;
 		Calculate(rebirth);
