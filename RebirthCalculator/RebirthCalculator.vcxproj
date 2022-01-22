@@ -141,6 +141,12 @@
   <ItemGroup>
     <ClCompile Include="RebirthCalculator.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="curl\include\curl\Makefile.am" />
+    <None Include="curl\include\curl\Makefile.in" />
+    <None Include="curl\Makefile.am" />
+    <None Include="curl\Makefile.in" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
