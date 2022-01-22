@@ -559,7 +559,7 @@ int main() {
 		std::cin >> rebirth;
 		if (rebirth == -4) {
 			std::cout << "\nYou may experience lag at the last calculating Rebirths..." << std::endl;
-			for (int i = 0; i < 15000000; i++) {
+			for (int i = 0; i < 12600000; i++) {
 				ListCalculate(i);
 			};
 			std::system("pause");
