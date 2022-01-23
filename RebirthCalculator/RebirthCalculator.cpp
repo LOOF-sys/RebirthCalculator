@@ -540,6 +540,8 @@ int ListCalculate(int rebirth) {
 	return 0;
 }
 
+// Version 1.14
+
 int main() {
 	HWND hwnd = GetConsoleWindow();
 	if (hwnd != NULL) { MoveWindow(hwnd, 100, 100, 1300, 600, TRUE); }
