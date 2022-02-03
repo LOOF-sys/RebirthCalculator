@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <string>
 #include <thread>
+
 float DarkStarLevels[21] = {
 	1250, // level 1
 	2500, // level 2
@@ -545,19 +546,20 @@ int ListCalculate(int rebirth) {
 int main() {
 	HWND hwnd = GetConsoleWindow();
 	if (hwnd != NULL) { MoveWindow(hwnd, 100, 100, 1300, 600, TRUE); }
-	/*
-	std::cout << "Made By Cypher#2763 | https://discord.gg/3WJnU7tCGv\nRoblox User | SamTerraria10" << std::endl;
-	std::cout << "Type in -4 to list all Glitchable Rebirths,"<< std::endl;
-	std::cout << "Otherwise Type in the specific rebirth you wish to calculate," << std::endl;
-	std::cout << "\"[XP ADDED (number)]\" defines how much treadmill xp is added to it for it to work (shows 0 if it works without treadmill modification)\n" << std::endl;
-	*/
 	int rebirth = 0;
 	while (true) {
-		std::cout << "Version 1.14, Keep the window at the automatic set size to ensure correct formatting.\n" << std::endl;
+		std::cout << "Version 1.16, Keep the window at the automatic set size to ensure correct formatting.\n" << std::endl;
 		std::cout << "This Program was Developed By: Cypher#2763 (Programmer), SiZzY#9158 and Codes_SoundzYT#6288" << std::endl;
-		std::cout << "Roblox Users | SamTerraria10 (Cypher), S1ZzYChEeKs and Codes_SoundzYT\n" << std::endl;
+		std::cout << "Roblox Users | CypherV5, S1ZzYChEeKs and Codes_SoundzYT\n" << std::endl;
+		std::cout << "Type -4 into the console to print ALL POSSIBLE GLITCHABLE REBIRTHS.\n" << std::endl;
 		std::cout << "Type rebirth here: ";
 		std::cin >> rebirth;
+		if (rebirth == 0) {
+			std::system("CLS");
+			std::cout << "CALLSTACK ERROR";
+			MessageBox(hwnd, L"Unhandled exception on 0x00FFFFFA2, INT FAILURE", L"RebirthCalculator.exe", MB_ICONERROR);
+			std::terminate();
+		}
 		if (rebirth == -4) {
 			std::cout << "\nYou may experience a slow down at the last calculating Rebirths..." << std::endl;
 			for (int i = 0; i < 12600000; i++) {
