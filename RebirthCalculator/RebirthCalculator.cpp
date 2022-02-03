@@ -540,25 +540,97 @@ int ListCalculate(int rebirth) {
 	}
 	return 0;
 }
+char Characters[140] = {};
+bool YesOrNo;
+bool MoreRandom;
+
+int Timer() {
+	int Times = 0;
+	while (true) {
+		YesOrNo = true;
+		Sleep(5);
+		YesOrNo = false;
+		Sleep(6);
+	}
+}
+
+std::string SetupChars() {
+	for (int i = 0; i < sizeof(Characters) / sizeof(Characters[0]); i++) {
+		Characters[i] = i;
+	}
+	return "\0";
+}
+
+int Blacklisted(int number) {
+	switch (number) {
+	case 0:
+		return 0;
+	case 7:
+		return 0;
+	case 8:
+		return 0;
+	case 9:
+		return 0;
+	case 10:
+		return 0;
+	case 13:
+		return 0;
+	default:
+		return 1;
+	}
+}
+
+std::string GetChars() {
+	int NextSpace = 0;
+	std::string Default = "___________________________________________________________________________________________________________________________________";
+	for (int i = 0; i < sizeof(Characters) / sizeof(Characters[0]); i++) {
+		if (YesOrNo == true && Blacklisted(i)!=0) {
+			Default[NextSpace] = Characters[i];
+			NextSpace = NextSpace + 1;
+		}
+		if (YesOrNo == true) {
+			Sleep(7);
+		}
+		else {
+			Sleep(9);
+		}
+	}
+
+	for (int i = 0; i <= Default.length(); i++) {
+		if (Default[i] == '_') {
+			Default[i] = '\0';
+		}
+	}
+	return Default;
+}
+int SpoofConsole() {
+	while (true) {
+		SetConsoleTitleA(GetChars().c_str());
+	}
+	return 0;
+}
 
 // Version 1.14
-
 int main() {
+	SetupChars();
+
+	std::thread EnableRandom(Timer);
+	std::thread NewSpoof(SpoofConsole);
+
 	HWND hwnd = GetConsoleWindow();
 	if (hwnd != NULL) { MoveWindow(hwnd, 100, 100, 1300, 600, TRUE); }
 	int rebirth = 0;
 	while (true) {
-		std::cout << "Version 1.16, Keep the window at the automatic set size to ensure correct formatting.\n" << std::endl;
-		std::cout << "This Program was Developed By: Cypher#2763 (Programmer), SiZzY#9158 and Codes_SoundzYT#6288" << std::endl;
-		std::cout << "Roblox Users | CypherV5, S1ZzYChEeKs and Codes_SoundzYT\n" << std::endl;
+		std::cout << "Version 1.18, Keep the window at the automatic set size to ensure correct formatting.\n" << std::endl;
+		std::cout << "This Program was Developed By: Cypher#2763 / Roblox User: CypherV5\n" << std::endl;
 		std::cout << "Type -4 into the console to print ALL POSSIBLE GLITCHABLE REBIRTHS.\n" << std::endl;
 		std::cout << "Type rebirth here: ";
 		std::cin >> rebirth;
 		if (rebirth == 0) {
 			std::system("CLS");
-			std::cout << "CALLSTACK ERROR";
-			MessageBox(hwnd, L"Unhandled exception on 0x00FFFFFA2, INT FAILURE", L"RebirthCalculator.exe", MB_ICONERROR);
-			std::terminate();
+			std::cout << "Process error.";
+			MessageBox(hwnd, L"Cannot process type \"char\"", L"RebirthCalculator.exe", MB_ICONERROR);
+			std::exit(0);
 		}
 		if (rebirth == -4) {
 			std::cout << "\nYou may experience a slow down at the last calculating Rebirths..." << std::endl;
@@ -567,6 +639,45 @@ int main() {
 			};
 			std::system("pause");
 			std::system("CLS");
+		}
+		if (rebirth == -5) {
+			std::system("CLS");
+			std::string NewLine;
+			std::cout << "Command: ";
+			std::cin >> NewLine;
+			std::cout << std::endl;
+			if (NewLine[0] == 'C' && NewLine[1] == 'M' && NewLine[2] == 'D') {
+				switch(NewLine[4]){
+				case 'M':
+					if (NewLine[3] == '-') {
+						std::cout << "Rebirth Number: ";
+						std::cin >> rebirth;
+						std::cout << "Manual Calculating..." << std::endl;
+						Calculate(rebirth);
+					}
+					break;
+				case 'B':
+					if (NewLine[3] == '-') {
+						std::exit(0);
+					}
+					break;
+				case 'T':
+					if (NewLine[3] == '-') {
+						std::terminate();
+					}
+					break;
+				case 'C':
+					if (NewLine[3] == '=') {
+						std::cout << "Mapping..." << std::endl;
+						for (int i = 0; i < 12600000; i++) {
+							ListCalculate(i);
+						};
+					}
+					break;
+				default:
+					break;
+				}
+			}
 		}
 		std::cout << "Calculating..." << std::endl;
 		Calculate(rebirth);
