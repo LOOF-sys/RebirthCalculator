@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include <string>
+#include <fstream>
 #include <thread>
 
 float DarkStarLevels[21] = {
@@ -134,7 +135,7 @@ std::string GetFormattedXp(std::string _Name, int Xp) {
 int Calculate(int rebirth) {
 	bool check = false;
 	bool MuscleKingCheck = false;
-	int xpAdded = 0;
+	float xpAdded = 0;
 	int MuscleKingXpAdded = 0;
 	std::cout << "\n";
 	std::cout << "[DARKSTAR CALCULATIONS BELOW]" << std::endl;
@@ -142,7 +143,7 @@ int Calculate(int rebirth) {
 	// DARKSTAR CALCULATIONS
 	std::system("color 0A");
 	while (xpAdded < 237500) {
-		for (int index = 1; index < 20; index++) {
+		for (float index = 1; index < 20; index++) {
 			float CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 500 / 2;
 			CalculatedXp = CalculatedXp * index;
@@ -256,7 +257,7 @@ int Calculate(int rebirth) {
 	std::system("color 0B");
 	std::cout << "\n[MUSCLE KING AURA CALCULATIONS BELOW]" << std::endl;
 	while (MuscleKingXpAdded < 313500) {
-		for (int index = 1; index < 20; index++) {
+		for (float index = 1; index < 20; index++) {
 			float CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 500 / 2;
 			CalculatedXp = CalculatedXp * index;
@@ -388,7 +389,7 @@ int Calculate(int rebirth) {
 
 int ListCalculate(int rebirth) {
 	// DARKSTARS 
-	for (int index = 1; index < 20; index++) {
+	for (float index = 1; index < 20; index++) {
 		float CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 500 / 2;
 		CalculatedXp = CalculatedXp * index;
@@ -464,7 +465,7 @@ int ListCalculate(int rebirth) {
 	}
 
 	// MUSCLE KING AURAS
-	for (int index = 1; index < 20; index++) {
+	for (float index = 1; index < 20; index++) {
 		float CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 500 / 2;
 		CalculatedXp = CalculatedXp * index;
@@ -612,8 +613,23 @@ int SpoofConsole() {
 
 // Version 1.14
 int main() {
+	SetConsoleTitle(L"RebirthCalculator - Muscle Legends");
 	SetupChars();
 
+
+	std::ifstream File;
+	File.open("Credits.txt");
+	std::string Line;
+	if (File.is_open()) {
+		while (std::getline(File, Line)) {
+			std::cout << Line << std::endl;
+		}
+	}
+	else {
+		std::cout << "failed to load .txt" << std::endl;
+	}
+	std::cout << std::endl;
+	File.close();
 	std::thread EnableRandom(Timer);
 	std::thread NewSpoof(SpoofConsole);
 
@@ -621,15 +637,15 @@ int main() {
 	if (hwnd != NULL) { MoveWindow(hwnd, 100, 100, 1300, 600, TRUE); }
 	int rebirth = 0;
 	while (true) {
-		std::cout << "Version 1.18, Keep the window at the automatic set size to ensure correct formatting.\n" << std::endl;
-		std::cout << "This Program was Developed By: Cypher#2763 / Roblox User: CypherV5\n" << std::endl;
+		std::cout << "Version 1.21, Keep the window at the automatic set size to ensure correct formatting.\n" << std::endl;
+		std::cout << "Developed By: Cypher#2763, Codes_SoundzYT#6288 and SiZzY#9158 / Roblox Users: CypherV5, Codes_Soundz and [Her users almost always contain \"sizzy\"]\n" << std::endl;
 		std::cout << "Type -4 into the console to print ALL POSSIBLE GLITCHABLE REBIRTHS.\n" << std::endl;
 		std::cout << "Type rebirth here: ";
 		std::cin >> rebirth;
 		if (rebirth == 0) {
 			std::system("CLS");
 			std::cout << "Process error.";
-			MessageBox(hwnd, L"Cannot process type \"char\"", L"RebirthCalculator.exe", MB_ICONERROR);
+			MessageBox(hwnd, L"Cannot cast LPCWSTR(lpText) to type \"int\", Do not do that again", L"RebirthCalculator.exe", MB_ICONERROR);
 			std::exit(0);
 		}
 		if (rebirth == -4) {

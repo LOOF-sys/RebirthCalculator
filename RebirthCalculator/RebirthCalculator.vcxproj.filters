@@ -25,4 +25,9 @@
     <None Include="curl\include\curl\Makefile.am" />
     <None Include="curl\include\curl\Makefile.in" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Credits.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>
