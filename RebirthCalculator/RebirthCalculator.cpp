@@ -656,9 +656,9 @@ int main() {
 		}
 		File.close();
 		std::system("attrib +R Credits.txt");
-		std::string RecentUpdates = "Changed the cmd system reader, Added a new cmd (-6) for Help/Docs, Fixed a bug with the muscle king aura output & Changes to the file reader.";
+		std::string RecentUpdates = "Fixed the entire +Xp System because it was inaccurate as fuck but its now accurate :), fixed some Level inaccuracies aswell & The calc is now 98% Accurate.";
 		
-		std::cout << "\nVersion 1.23, Keep the window at the automatic set size to ensure correct formatting." << std::endl;
+		std::cout << "\nVersion 1.25, Keep the window at the automatic set size to ensure correct formatting." << std::endl;
 		std::cout << "Recent Updates: " << RecentUpdates << "\n" << std::endl;
 		std::cout << "Developed By: Cypher#2763, Codes_SoundzYT#6288 and SiZzY#9158 / Roblox Users: CypherV5, Codes_Soundz and [Her users almost always contain \"sizzy\"]\n" << std::endl;
 		std::cout << "Commands: (-4) is to print ALL POSSIBLE glitchable rebirths, (-5) is to open the cmd line for debugging, (-6) is for help/documentation.\n" << std::endl;
