@@ -146,7 +146,6 @@ int GetAccurateLevel(float Xp, int Multiplier) {
 int GetGlitchingSpeed(int Level,int LEVEL,float Xp) {
 	int Sub = 100;
 	int RawLevel = GetAccurateLevel(Xp, LEVEL);
-	std::cout << RawLevel << std::endl;
 	int RawAdd = 5 * RawLevel;
 	int Answer = 100 - RawAdd;
 	return Answer;
