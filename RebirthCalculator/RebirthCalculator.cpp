@@ -143,12 +143,12 @@ int GetAccurateLevel(float Xp, int Multiplier) {
 	}
 	return level;
 }
-int GetGlitchingSpeed(int Level,int LEVEL,float Xp) {
+std::string GetGlitchingSpeed(int Level,int LEVEL,float Xp) {
 	int Sub = 100;
 	int RawLevel = GetAccurateLevel(Xp, LEVEL);
 	int RawAdd = 5 * RawLevel;
 	int Answer = 100 - RawAdd;
-	return Answer;
+	return "+" + std::to_string(Answer) + " Stats per punch,";
 }
 
 int Calculate(int rebirth) {
@@ -160,6 +160,7 @@ int Calculate(int rebirth) {
 	std::cout << "[DARKSTAR CALCULATIONS BELOW]" << std::endl;
 
 	// DARKSTAR CALCULATIONS
+
 	std::system("color 0A");
 	while (xpAdded < 237500) {
 		for (int index = 1; index < 20; index++) {
@@ -642,6 +643,7 @@ int main() {
 	if (hwnd != NULL) { MoveWindow(hwnd, 100, 100, 1450, 600, TRUE); }
 	int rebirth = 0;
 	while (true) {
+		std::system("color 07");
 		std::ifstream File;
 		File.open("Credits.txt");
 		std::string Line;
