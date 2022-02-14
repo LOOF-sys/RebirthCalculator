@@ -428,7 +428,6 @@ int Calculate(int rebirth) {
 
 int ListCalculate(int rebirth) {
 	// DARKSTARS 
-	std::cout << "MUSCLE KING AURA CALCULATIONS HAVE BEEN TEMP-DISABLED FOR FIXES\n" << std::endl;
 	for (float index = 1; index < 20; index++) {
 		float CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 500 / 2;
