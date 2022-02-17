@@ -212,6 +212,17 @@ std::string GetGlitchingSpeed(int Level,int LEVEL,float Xp,int XpAdded,std::stri
 
 int FileAmount = 0;
 
+std::string WriteToString_S = "";
+
+std::string operator<<(std::string main,std::string add) {
+	WriteToString_S = WriteToString_S + add;
+	return WriteToString_S;
+}
+std::string operator<<(std::string main, int add) {
+	WriteToString_S = WriteToString_S + std::to_string(add);
+	return WriteToString_S;
+}
+
 int Calculate(int rebirth) {
 	bool check = false;
 	bool MuscleKingCheck = false;
@@ -485,8 +496,7 @@ int ListCalculate(int rebirth) {
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-				SetConsoleTextAttribute(Console, 10);
-				std::cout << rebirth << " [Muscle King] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << std::endl;
+				WriteToString_S << rebirth << " [Muscle King] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << "\n";
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -494,8 +504,7 @@ int ListCalculate(int rebirth) {
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-				SetConsoleTextAttribute(Console, 14);
-				std::cout << rebirth << " [Legends Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << std::endl;
+				WriteToString_S << rebirth << " [Legends Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << "\n";
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -503,8 +512,7 @@ int ListCalculate(int rebirth) {
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-				SetConsoleTextAttribute(Console, 11);
-				std::cout << rebirth << " [Eternal Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << std::endl;
+				WriteToString_S << rebirth << " [Eternal Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << "\n";
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -512,8 +520,7 @@ int ListCalculate(int rebirth) {
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-				SetConsoleTextAttribute(Console, 13);
-				std::cout << rebirth << " [Mythical Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << std::endl;
+				WriteToString_S << rebirth << " [Mythical Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << "\n";
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -521,8 +528,7 @@ int ListCalculate(int rebirth) {
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-				SetConsoleTextAttribute(Console, 11);
-				std::cout << rebirth << " [Frost Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << std::endl;
+				WriteToString_S << rebirth << " [Frost Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << "\n";
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -530,8 +536,7 @@ int ListCalculate(int rebirth) {
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-				SetConsoleTextAttribute(Console, 14);
-				std::cout << rebirth << " [5K Durability Rock] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << std::endl;
+				WriteToString_S << rebirth << " [5K Durability Rock] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << "\n";
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -539,8 +544,7 @@ int ListCalculate(int rebirth) {
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-				SetConsoleTextAttribute(Console, 15);
-				std::cout << rebirth << " [100 Durability Rock] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << std::endl;
+				WriteToString_S << rebirth << " [100 Durability Rock] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << "\n";
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -548,8 +552,7 @@ int ListCalculate(int rebirth) {
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-				SetConsoleTextAttribute(Console, 15);
-				std::cout << rebirth << " [10 Durability Rock] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << std::endl;
+				WriteToString_S << rebirth << " [10 Durability Rock] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << "\n";
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -557,12 +560,10 @@ int ListCalculate(int rebirth) {
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-				SetConsoleTextAttribute(Console, 7);
-				std::cout << rebirth << " [Tiny Gym Rock] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << std::endl;
+				WriteToString_S << rebirth << " [Tiny Gym Rock] " << GetGlitchingSpeed(i,index,CalculatedXp,NULL,"Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index,"Darkstar") << "]" << "\n";
 			}
 		};
 	}
-
 	// MUSCLE KING AURAS [TEMPORARILY DISABLED]
 	/*
 	for (float index = 1; index < 20; index++) {
@@ -712,7 +713,7 @@ int SpoofConsole() {
 	return 0;
 }
 
-std::string Version = "1.29";
+std::string Version = "1.31";
 int main() {
 
 	SetConsoleTitle(L"RebirthCalculator - Muscle Legends");
@@ -741,7 +742,7 @@ int main() {
 		SetConsoleTextAttribute(Console, 7);
 		File.close();
 		std::system("attrib +R Credits.txt");
-		std::string RecentUpdates = "MAJOR UPDATE, BIG UI UPDATE, NEW OUTPUT SYSTEM FOR NORMAL CALCULATIONS, [ALOT] FIXES TO THE CALCULATIONS AND THE NORMAL CALCULATIONS ARE ALOT FASTER.";
+		std::string RecentUpdates = "The print all feature now writes to file, fix some miscalculations with the +Add Xp before glitch system & +stats system, [Skipping 1.30 because that version was broken].";
 		std::cout << "\nVersion " + Version + ", Keep the window at the automatic set size to ensure correct formatting." << std::endl;
 		SetConsoleTextAttribute(Console, 14);
 		std::cout << "Recent Updates: " << "[" << Version << "] " << RecentUpdates << "\n" << std::endl;
@@ -765,10 +766,16 @@ int main() {
 			std::exit(0);
 		}
 		if (rebirth == -4) {
-			std::cout << "\nYou may experience a slow down at the last calculating Rebirths..." << std::endl;
+			WriteToString_S = "";
+			std::ofstream WriteTo("All_Rebirths_Output" + std::to_string(FileAmount) + ".txt");
+			std::cout << "Calculating... This should only take 1/2 minutes..." << std::endl;
 			for (int i = 0; i < 12600000; i++) {
 				ListCalculate(i);
 			};
+			WriteTo << WriteToString_S;
+			WriteTo.close();
+			std::string OpenFile = "notepad \"All_Rebirths_Output" + std::to_string(FileAmount) + ".txt" + "\"";
+			std::system(OpenFile.c_str());
 			std::system("pause");
 			std::system("CLS");
 		}
@@ -801,9 +808,14 @@ int main() {
 				case 'C':
 					if (NewLine[3] == '=') {
 						std::cout << "Mapping..." << std::endl;
+						WriteToString_S = "";
+						std::cout << "Calculating... This should only take 1/2 minutes..." << std::endl;
 						for (int i = 0; i < 12600000; i++) {
 							ListCalculate(i);
 						};
+						std::cout << WriteToString_S << std::endl;
+						std::system("pause");
+						std::system("CLS");
 					}
 					break;
 				default:
