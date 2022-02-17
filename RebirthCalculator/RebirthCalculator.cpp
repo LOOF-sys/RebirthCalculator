@@ -772,6 +772,7 @@ int main() {
 			for (int i = 0; i < 12600000; i++) {
 				ListCalculate(i);
 			};
+			std::cout << "Finished Calculating, Check your desktop for an open notepad window." << std::endl;
 			WriteTo << WriteToString_S;
 			WriteTo.close();
 			std::string OpenFile = "notepad \"All_Rebirths_Output" + std::to_string(FileAmount) + ".txt" + "\"";
@@ -830,6 +831,12 @@ int main() {
 			std::system("pause");
 		}
 		std::cout << "Calculating..." << std::endl;
+		if (rebirth > 0 && rebirth < 30) {
+			std::cout << "\nYou need atleast 30 rebirths to use a darkstar/muscle king aura so calculating below 30 is useless.\n\n";
+			std::system("pause");
+			std::system("CLS");
+			continue;
+		}
 		if (rebirth != -6 && rebirth != -5 && rebirth != -4) {
 			Calculate(rebirth);
 		}
