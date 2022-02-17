@@ -142,12 +142,6 @@
     <ClCompile Include="RebirthCalculator.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="curl\include\curl\Makefile.am" />
-    <None Include="curl\include\curl\Makefile.in" />
-    <None Include="curl\Makefile.am" />
-    <None Include="curl\Makefile.in" />
-  </ItemGroup>
-  <ItemGroup>
     <Text Include="Credits.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
