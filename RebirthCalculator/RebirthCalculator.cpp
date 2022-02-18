@@ -660,6 +660,7 @@ int StrictListCalculate(int rebirth) {
 		rebirth = rebirth + 1;
 	}
 	rebirth = 1;
+	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 100 / 2;
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
@@ -673,6 +674,7 @@ int StrictListCalculate(int rebirth) {
 		rebirth = rebirth + 1;
 	}
 	rebirth = 1;
+	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 45 / 2;
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
@@ -686,6 +688,7 @@ int StrictListCalculate(int rebirth) {
 		rebirth = rebirth + 1;
 	}
 	rebirth = 1;
+	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 30 / 2;
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
@@ -699,6 +702,7 @@ int StrictListCalculate(int rebirth) {
 		rebirth = rebirth + 1;
 	}
 	rebirth = 1;
+	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 15 / 2;
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
@@ -712,6 +716,7 @@ int StrictListCalculate(int rebirth) {
 		rebirth = rebirth + 1;
 	}
 	rebirth = 1;
+	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 8 / 2;
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
@@ -725,6 +730,7 @@ int StrictListCalculate(int rebirth) {
 		rebirth = rebirth + 1;
 	}
 	rebirth = 1;
+	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 3 / 2;
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
@@ -738,6 +744,7 @@ int StrictListCalculate(int rebirth) {
 		rebirth = rebirth + 1;
 	}
 	rebirth = 1;
+	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 2 / 2;
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
@@ -751,6 +758,7 @@ int StrictListCalculate(int rebirth) {
 		rebirth = rebirth + 1;
 	}
 	rebirth = 1;
+	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 1 / 2;
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
