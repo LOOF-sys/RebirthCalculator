@@ -834,6 +834,7 @@ int SpoofConsole() {
 	}
 	return 0;
 }
+std::string PreviousVersion = "1.32";
 std::string Version = "1.34";
 int main() {
 
@@ -863,7 +864,8 @@ int main() {
 		SetConsoleTextAttribute(Console, 7);
 		File.close();
 		std::system("attrib +R Credits.txt");
-		std::string RecentUpdates = "The print all feature now writes to file, fix some miscalculations with the +Add Xp before glitch system & +stats system, [Skipping 1.30 because that version was broken].";
+		std::string RecentUpdates = "Fixed a few bugs and the calculator is now 99.86% accurate Also, dm Cypher#2763 if you are interested in being a tester for the calculators updates.";
+		std::cout << "\nPrevious Version " << PreviousVersion << std::endl;
 		std::cout << "\nVersion " + Version + ", Keep the window at the automatic set size to ensure correct formatting." << std::endl;
 		SetConsoleTextAttribute(Console, 14);
 		std::cout << "Recent Updates: " << "[" << Version << "] " << RecentUpdates << "\n" << std::endl;
