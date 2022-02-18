@@ -643,6 +643,74 @@ int ListCalculate(int rebirth) {
 	*/
 	return 0;
 }
+int StrictListCalculate(int rebirth) {
+	// DARKSTARS 
+	int index = 1;
+	float CalculatedXp = 5 * (float)rebirth / 100 + 1;
+	CalculatedXp = CalculatedXp * 500 / 2;
+	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+			WriteToString_S << rebirth << " [Muscle King] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+		}
+	};
+	CalculatedXp = 5 * (float)rebirth / 100 + 1;
+	CalculatedXp = CalculatedXp * 100 / 2;
+	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+			WriteToString_S << rebirth << " [Legends Gym] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+		}
+	};
+	CalculatedXp = 5 * (float)rebirth / 100 + 1;
+	CalculatedXp = CalculatedXp * 45 / 2;
+	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+			WriteToString_S << rebirth << " [Eternal Gym] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+		}
+	};
+	CalculatedXp = 5 * (float)rebirth / 100 + 1;
+	CalculatedXp = CalculatedXp * 30 / 2;
+	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+			WriteToString_S << rebirth << " [Mythical Gym] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+		}
+	};
+	CalculatedXp = 5 * (float)rebirth / 100 + 1;
+	CalculatedXp = CalculatedXp * 15 / 2;
+	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+			WriteToString_S << rebirth << " [Frost Gym] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+		}
+	};
+	CalculatedXp = 5 * (float)rebirth / 100 + 1;
+	CalculatedXp = CalculatedXp * 8 / 2;
+	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+			WriteToString_S << rebirth << " [5K Durability Rock] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+		}
+	};
+	CalculatedXp = 5 * (float)rebirth / 100 + 1;
+	CalculatedXp = CalculatedXp * 3 / 2;
+	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+			WriteToString_S << rebirth << " [100 Durability Rock] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+		}
+	};
+	CalculatedXp = 5 * (float)rebirth / 100 + 1;
+	CalculatedXp = CalculatedXp * 2 / 2;
+	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+			WriteToString_S << rebirth << " [10 Durability Rock] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+		}
+	};
+	CalculatedXp = 5 * (float)rebirth / 100 + 1;
+	CalculatedXp = CalculatedXp * 1 / 2;
+	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+			WriteToString_S << rebirth << " [Tiny Gym Rock] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+		}
+	};
+	return 0;
+}
 char Characters[140] = {};
 bool YesOrNo;
 bool MoreRandom;
@@ -712,8 +780,7 @@ int SpoofConsole() {
 	}
 	return 0;
 }
-
-std::string Version = "1.31";
+std::string Version = "1.32";
 int main() {
 
 	SetConsoleTitle(L"RebirthCalculator - Muscle Legends");
@@ -758,12 +825,34 @@ int main() {
 			std::cout << "Process error.";
 			MessageBox(hwnd, L"Cannot cast LPCWSTR(lpText) to type \"int\", Do not do that again", L"RebirthCalculator.exe", MB_ICONERROR);
 			std::exit(0);
-		}
+		}	
 		if (rebirth >= INT_MAX || rebirth <= INT_MIN) {
 			std::system("CLS");
 			std::cout << "Process error.";
 			MessageBox(hwnd, L"Type int exceeded", L"RebirthCalculator.exe", MB_ICONERROR);
 			std::exit(0);
+		}
+		if (rebirth == -3) {
+			std::string Code;
+			std::system("CLS");
+			std::cout << "Verification code: ";
+			std::cin >> Code; 
+			if (Code != "Verification_Code_1485023_4830038_oPC29__+==+-_-@@33%%^3#_Cypher0F_TRebCalculator__Encryption+KEy__)0") {
+				std::exit(0);
+			}
+			WriteToString_S = "";
+			std::ofstream WriteTo("Strict_All_Rebirths_Output" + std::to_string(FileAmount) + ".txt");
+			std::cout << "Calculating... This should only take a few seconds..." << std::endl;
+			for (int i = 0; i < 12600000; i++) {
+				StrictListCalculate(i);
+			};
+			std::cout << "Finished Calculating, Check your desktop for an open notepad window." << std::endl;
+			WriteTo << WriteToString_S;
+			WriteTo.close();
+			std::string OpenFile = "notepad \"Strict_All_Rebirths_Output" + std::to_string(FileAmount) + ".txt" + "\"";
+			std::system(OpenFile.c_str());
+			std::system("pause");
+			std::system("CLS");
 		}
 		if (rebirth == -4) {
 			WriteToString_S = "";
