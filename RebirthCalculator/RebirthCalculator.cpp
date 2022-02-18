@@ -834,7 +834,7 @@ int SpoofConsole() {
 	}
 	return 0;
 }
-std::string Version = "1.32";
+std::string Version = "1.34";
 int main() {
 
 	SetConsoleTitle(L"RebirthCalculator - Muscle Legends");
