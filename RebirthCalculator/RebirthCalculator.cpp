@@ -644,71 +644,125 @@ int ListCalculate(int rebirth) {
 	return 0;
 }
 int StrictListCalculate(int rebirth) {
+	rebirth = 1;
 	// DARKSTARS 
 	int index = 1;
 	float CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 500 / 2;
-	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
-		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-			WriteToString_S << rebirth << " [Muscle King] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
-		}
-	};
+	while (CalculatedXp<(AccurateGlitchingNumbers[18]+1)) {
+		CalculatedXp = 5 * (float)rebirth / 100 + 1;
+		CalculatedXp = CalculatedXp * 500 / 2;
+		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+				WriteToString_S << rebirth << " [Muscle King] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+			}
+		};
+		rebirth = rebirth + 1;
+	}
+	rebirth = 1;
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 100 / 2;
-	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
-		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-			WriteToString_S << rebirth << " [Legends Gym] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
-		}
-	};
+	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
+		CalculatedXp = 5 * (float)rebirth / 100 + 1;
+		CalculatedXp = CalculatedXp * 100 / 2;
+		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+				WriteToString_S << rebirth << " [Legends Gym] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+			}
+		};
+		rebirth = rebirth + 1;
+	}
+	rebirth = 1;
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 45 / 2;
-	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
-		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-			WriteToString_S << rebirth << " [Eternal Gym] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
-		}
-	};
+	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
+		CalculatedXp = 5 * (float)rebirth / 100 + 1;
+		CalculatedXp = CalculatedXp * 45 / 2;
+		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+				WriteToString_S << rebirth << " [Eternal Gym] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+			}
+		};
+		rebirth = rebirth + 1;
+	}
+	rebirth = 1;
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 30 / 2;
-	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
-		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-			WriteToString_S << rebirth << " [Mythical Gym] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
-		}
-	};
+	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
+		CalculatedXp = 5 * (float)rebirth / 100 + 1;
+		CalculatedXp = CalculatedXp * 30 / 2;
+		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+				WriteToString_S << rebirth << " [Mythical Gym] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+			}
+		};
+		rebirth = rebirth + 1;
+	}
+	rebirth = 1;
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 15 / 2;
-	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
-		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-			WriteToString_S << rebirth << " [Frost Gym] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
-		}
-	};
+	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
+		CalculatedXp = 5 * (float)rebirth / 100 + 1;
+		CalculatedXp = CalculatedXp * 15 / 2;
+		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+				WriteToString_S << rebirth << " [Frost Gym] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+			}
+		};
+		rebirth = rebirth + 1;
+	}
+	rebirth = 1;
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 8 / 2;
-	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
-		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-			WriteToString_S << rebirth << " [5K Durability Rock] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
-		}
-	};
+	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
+		CalculatedXp = 5 * (float)rebirth / 100 + 1;
+		CalculatedXp = CalculatedXp * 8 / 2;
+		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+				WriteToString_S << rebirth << " [5K Durability Rock] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+			}
+		};
+		rebirth = rebirth + 1;
+	}
+	rebirth = 1;
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 3 / 2;
-	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
-		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-			WriteToString_S << rebirth << " [100 Durability Rock] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
-		}
-	};
+	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
+		CalculatedXp = 5 * (float)rebirth / 100 + 1;
+		CalculatedXp = CalculatedXp * 3 / 2;
+		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+				WriteToString_S << rebirth << " [100 Durability Rock] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+			}
+		};
+		rebirth = rebirth + 1;
+	}
+	rebirth = 1;
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 2 / 2;
-	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
-		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-			WriteToString_S << rebirth << " [10 Durability Rock] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
-		}
-	};
+	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
+		CalculatedXp = 5 * (float)rebirth / 100 + 1;
+		CalculatedXp = CalculatedXp * 2 / 2;
+		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+				WriteToString_S << rebirth << " [10 Durability Rock] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+			}
+		};
+		rebirth = rebirth + 1;
+	}
+	rebirth = 1;
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 1 / 2;
-	for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
-		if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-			WriteToString_S << rebirth << " [Tiny Gym Rock] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
-		}
-	};
+	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
+		CalculatedXp = 5 * (float)rebirth / 100 + 1;
+		CalculatedXp = CalculatedXp * 1 / 2;
+		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+				WriteToString_S << rebirth << " [Tiny Gym Rock] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "]" << "\n";
+			}
+		};
+		rebirth = rebirth + 1;
+	}
 	return 0;
 }
 char Characters[140] = {};
@@ -843,9 +897,7 @@ int main() {
 			WriteToString_S = "";
 			std::ofstream WriteTo("Strict_All_Rebirths_Output" + std::to_string(FileAmount) + ".txt");
 			std::cout << "Calculating... This should only take a few seconds..." << std::endl;
-			for (int i = 0; i < 12600000; i++) {
-				StrictListCalculate(i);
-			};
+			StrictListCalculate(0);
 			std::cout << "Finished Calculating, Check your desktop for an open notepad window." << std::endl;
 			WriteTo << WriteToString_S;
 			WriteTo.close();
@@ -853,6 +905,7 @@ int main() {
 			std::system(OpenFile.c_str());
 			std::system("pause");
 			std::system("CLS");
+			continue;
 		}
 		if (rebirth == -4) {
 			WriteToString_S = "";
@@ -926,7 +979,7 @@ int main() {
 			std::system("CLS");
 			continue;
 		}
-		if (rebirth != -6 && rebirth != -5 && rebirth != -4) {
+		if (rebirth != -6 && rebirth != -5 && rebirth != -4 && rebirth!=-3) {
 			Calculate(rebirth);
 		}
 		else {
