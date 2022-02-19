@@ -133,6 +133,8 @@ std::string GetFormattedXp(std::string _Name, int Xp) {
 	return Output;
 }
 
+int LeftOverXpFrom_GetNumberFormattedXp = 0;
+
 // same as GetFormattedXp but instead it returns the raw number
 int GetNumberFormattedXp(std::string _Name, int Xp) {
 	std::string Output = "Level ";
@@ -162,8 +164,11 @@ int GetNumberFormattedXp(std::string _Name, int Xp) {
 			}
 		}
 	}
+	LeftOverXpFrom_GetNumberFormattedXp = Xp;
 	return Levels;
 }
+
+#define XP_LEFT LeftOverXpFrom_GetNumberFormattedXp
 
 int GetAccurateLevel(float Xp, int Multiplier, std::string petType) {
 	Xp = Xp / Multiplier;
@@ -238,22 +243,24 @@ int Calculate(int rebirth) {
 		for (int index = 1; index < 100; index++) {
 			float CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 500 / 2;
+			CalculatedXp = (int)CalculatedXp;
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + xpAdded;
 			for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 				if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-					WriteTo << "Your rebirth can glitch Darkstars on the Muscle King Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "]" << std::endl;
+					WriteTo << "Your rebirth can glitch Darkstars on the Muscle King Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "] [" << index << " punches required" << "]" << std::endl;
 					check = true;
 				}
 			};
 			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 100 / 2;
+				CalculatedXp = (int)CalculatedXp;
 				CalculatedXp = CalculatedXp * index;
 				CalculatedXp = CalculatedXp + xpAdded;
 				for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-						WriteTo << "Your rebirth can glitch Darkstars on the Legends Gym Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "]" << std::endl;
+						WriteTo << "Your rebirth can glitch Darkstars on the Legends Gym Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "] [" << index << " punches required" << "]" << std::endl;
 						check = true;
 					}
 				};
@@ -261,11 +268,12 @@ int Calculate(int rebirth) {
 			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 45 / 2;
+				CalculatedXp = (int)CalculatedXp;
 				CalculatedXp = CalculatedXp * index;
 				CalculatedXp = CalculatedXp + xpAdded;
 				for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-						WriteTo << "Your rebirth can glitch Darkstars on the Eternal Gym Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "]" << std::endl;
+						WriteTo << "Your rebirth can glitch Darkstars on the Eternal Gym Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "] [" << index << " punches required" << "]" << std::endl;
 						check = true;
 					}
 				};
@@ -273,11 +281,12 @@ int Calculate(int rebirth) {
 			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 30 / 2;
+				CalculatedXp = (int)CalculatedXp;
 				CalculatedXp = CalculatedXp * index;
 				CalculatedXp = CalculatedXp + xpAdded;
 				for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-						WriteTo << "Your rebirth can glitch Darkstars on the Mythical Gym Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "]" << std::endl;
+						WriteTo << "Your rebirth can glitch Darkstars on the Mythical Gym Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "] [" << index << " punches required" << "]" << std::endl;
 						check = true;
 					}
 				};
@@ -285,11 +294,12 @@ int Calculate(int rebirth) {
 			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 15 / 2;
+				CalculatedXp = (int)CalculatedXp;
 				CalculatedXp = CalculatedXp * index;
 				CalculatedXp = CalculatedXp + xpAdded;
 				for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-						WriteTo << "Your rebirth can glitch Darkstars on the Frost Gym Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "]" << std::endl;
+						WriteTo << "Your rebirth can glitch Darkstars on the Frost Gym Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "] [" << index << " punches required" << "]" << std::endl;
 						check = true;
 					}
 				};
@@ -297,11 +307,12 @@ int Calculate(int rebirth) {
 			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 8 / 2;
+				CalculatedXp = (int)CalculatedXp;
 				CalculatedXp = CalculatedXp * index;
 				CalculatedXp = CalculatedXp + xpAdded;
 				for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-						WriteTo << "Your rebirth can glitch Darkstars on the 5K Durability Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "]" << std::endl;
+						WriteTo << "Your rebirth can glitch Darkstars on the 5K Durability Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "] [" << index << " punches required" << "]" << std::endl;
 						check = true;
 					}
 				};
@@ -309,12 +320,13 @@ int Calculate(int rebirth) {
 			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 3 / 2;
+				CalculatedXp = (int)CalculatedXp;
 				CalculatedXp = CalculatedXp * index;
 				CalculatedXp = CalculatedXp + xpAdded;
 				for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateGlitchingNumbers[i]) {
 						
-						WriteTo << "Your rebirth can glitch Darkstars on the 100 Durability Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "]" << std::endl;
+						WriteTo << "Your rebirth can glitch Darkstars on the 100 Durability Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "] [" << index << " punches required" << "]" << std::endl;
 						check = true;
 					}
 				};
@@ -322,12 +334,13 @@ int Calculate(int rebirth) {
 			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 2 / 2;
+				CalculatedXp = (int)CalculatedXp;
 				CalculatedXp = CalculatedXp * index;
 				CalculatedXp = CalculatedXp + xpAdded;
 				for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateGlitchingNumbers[i]) {
 						
-						WriteTo << "Your rebirth can glitch Darkstars on the 10 Durability Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "]" << std::endl;
+						WriteTo << "Your rebirth can glitch Darkstars on the 10 Durability Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "] [" << index << " punches required" << "]" << std::endl;
 						check = true;
 					}
 				};
@@ -335,11 +348,12 @@ int Calculate(int rebirth) {
 			//if (check == false) {
 				CalculatedXp = 5 * (float)rebirth / 100 + 1;
 				CalculatedXp = CalculatedXp * 1 / 2;
+				CalculatedXp = (int)CalculatedXp;
 				CalculatedXp = CalculatedXp * index;
 				CalculatedXp = CalculatedXp + xpAdded;
 				for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 					if (CalculatedXp == AccurateGlitchingNumbers[i]) {
-						WriteTo << "Your rebirth can glitch Darkstars on the Tiny Gym Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "]" << std::endl;
+						WriteTo << "Your rebirth can glitch Darkstars on the Tiny Gym Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << GetAccurateLevel(CalculatedXp, index, "Darkstar") << "] [" << GetFormattedXp("Darkstar", xpAdded) << "] [" << index << " punches required" << "]" << std::endl;
 						check = true;
 					}
 				};
@@ -349,7 +363,7 @@ int Calculate(int rebirth) {
 	}
 	// MUSCLE KING CALCULATIONS
 	std::system("color 0B");
-	WriteTo << "\n[MUSCLE KING AURA CALCULATIONS BELOW]\n\n[WARNING]: MUSCLE KING AURAS CURRENTLY HAVE A SMALL MISCALCULATION FOR +Stats, IT ONLY SHOWS LEVEL 1 MUSCLE KING AURAS ACCURATELY.\n" << std::endl;
+	WriteTo << "\n[MUSCLE KING AURA CALCULATIONS BELOW]\n\n[WARNING]: MUSCLE KING AURAS ARE OUTDATED ALL THE WAY BACK TO 1.25, THEY ARENT ACCURATE AT ALL.\n" << std::endl;
 	while (MuscleKingXpAdded < 313500) {
 		for (float index = 1; index < 100; index++) {
 			float CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -842,10 +856,9 @@ int SpoofConsole() {
 	}
 	return 0;
 }
-std::string PreviousVersion = "1.32";
-std::string Version = "1.34";
+std::string PreviousVersion = "1.34";
+std::string Version = "1.36";
 int main() {
-
 	SetConsoleTitle(L"RebirthCalculator - Muscle Legends");
 	SetupChars();
 
@@ -872,7 +885,7 @@ int main() {
 		SetConsoleTextAttribute(Console, 7);
 		File.close();
 		std::system("attrib +R Credits.txt");
-		std::string RecentUpdates = "Fixed a few bugs and the calculator is now 99.86% accurate Also, dm Cypher#2763 if you are interested in being a tester for the calculators updates.";
+		std::string RecentUpdates = "FIXED A MASSIVE ISSUE [ENTIRE FULL SCALE SYSTEM MISCALCULATION] (was related to the +xp modification system), Output has significantly increased due to the fix, Muscle King Auras Calculationss dont work right now :( Expect a fix in 1.37-1.39.";
 		std::cout << "\nPrevious Version " << PreviousVersion << std::endl;
 		std::cout << "\nVersion " + Version + ", Keep the window at the automatic set size to ensure correct formatting." << std::endl;
 		SetConsoleTextAttribute(Console, 14);
