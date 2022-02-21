@@ -99,9 +99,20 @@ void Pause(std::string option) {
 	}
 }
 
+int LeftOverXpFrom_GetNumberFormattedXp = 0;
+int CorruptXp = 0;
+
+HWND ConsoleWindow = GetConsoleWindow();
+HANDLE Console = GetStdHandle(STD_OUTPUT_HANDLE); // -11
+#define ILLEGAL_REBIRTH_NUMBER(rebirth) rebirth == 31
+#define ILLEGAL_EXP_NUMBER(exp) exp == 10
+
+int DistortionCount = 0;
+
 // returns string format
 std::string GetFormattedXp(std::string _Name, int Xp) {
 	std::string Output = "Level ";
+	std::string FlagOutput = "";
 	int ElevatedXp = 0;
 	int Levels = 0;
 	if (_Name == "Darkstar") {
@@ -113,6 +124,17 @@ std::string GetFormattedXp(std::string _Name, int Xp) {
 			else {
 				Xp = Xp - ElevatedXp;
 				break;
+			}
+		}
+
+		// check for anomalies
+		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+			if (Xp + 10 == AccurateGlitchingNumbers[i]) {
+				FlagOutput = FlagOutput + "\n[XP ANOMALY DETECTED]\n";
+				SetConsoleTextAttribute(Console, 12);
+				std::cout << "[M] POTENTIAL CALCULATION ANOMALY OCCURED." << std::endl;
+				SetConsoleTextAttribute(Console, 7);
+				DistortionCount = DistortionCount + 1;
 			}
 		}
 	}
@@ -127,13 +149,22 @@ std::string GetFormattedXp(std::string _Name, int Xp) {
 				break;
 			}
 		}
+
+		// check for anomalies
+		for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
+			if (Xp + 10 == AccurateMuscleKingGlitchingNumbers[i]) {
+				FlagOutput = FlagOutput + "\n[XP ANOMALY DETECTED]\n";
+				SetConsoleTextAttribute(Console, 12);
+				std::cout << "[M] POTENTIAL CALCULATION ANOMALY OCCURED." << std::endl;
+				SetConsoleTextAttribute(Console, 7);
+				DistortionCount = DistortionCount + 1;
+			}
+		}
 	}
 	Levels = Levels + 1;
-	Output = Output + std::to_string(Levels) + ", Xp " + std::to_string(Xp);
+	Output = Output + std::to_string(Levels) + ", Xp " + std::to_string(Xp) + FlagOutput;
 	return Output;
 }
-
-int LeftOverXpFrom_GetNumberFormattedXp = 0;
 
 // same as GetFormattedXp but instead it returns the raw number
 int GetNumberFormattedXp(std::string _Name, int Xp) {
@@ -228,9 +259,8 @@ std::string operator<<(std::string main, int add) {
 	return WriteToString_S;
 }
 
-HANDLE Console = GetStdHandle(STD_OUTPUT_HANDLE); // -11
-
 int Calculate(int rebirth) {
+	DistortionCount = 0;
 	bool check = false;
 	bool MuscleKingCheck = false;
 	float xpAdded = 0;
@@ -239,10 +269,10 @@ int Calculate(int rebirth) {
 
 	bool Corrupt = false;
 
-	if (rebirth == 31) {
+	if(ILLEGAL_REBIRTH_NUMBER(rebirth)) {
 		SetConsoleTextAttribute(Console, 12);
 		char Answer;
-		std::cout << "[WARNING]: REBIRTH " << rebirth << " IS A VERY DISTORTED REBIRTH, THIS REBIRTH MAY CAUSE UNKNOWN CALCULATOR BEHAVIOUR/ABNORMAL CALCULATIONS. ARE YOU SURE YOU WISH TO CONTINUE? Y/N\n\n";
+		std::cout << "[CAUTION]: THIS REBIRTH HAS BEEN MARKED AS HAZARDOUS AND SHOULD BE AVOIDED DUE TO THE UNEXPECTED BEHAVIOUR IS HAS ON THE CALCULATORS CALCULATIONS, ARE YOU SURE YOU WISH TO\nCONTINUE? Y/N" << std::endl;
 		SetConsoleTextAttribute(Console, 7);
 		std::cin >> Answer;
 		if (Answer != 'Y' && Answer != 'y') {
@@ -257,7 +287,7 @@ int Calculate(int rebirth) {
 	// DARKSTAR CALCULATIONS
 	std::ofstream WriteTo(std::to_string(rebirth) + "_Rebirth_Calculations_Output" + std::to_string(FileAmount) + ".txt");
 	if (Corrupt == true) {
-		WriteTo << "CALCULATION MALFORMITY/ABNORMALITY DETECTED, CALCULATIONS MAY NOT BE ACCURATE.\n" << std::endl;
+		WriteTo << "CALCULATIONS FLAGGED AS HAZARDOUS, SOME THINGS MAY BE WRONG.\n" << std::endl;
 	}
 	std::system("color 0A");
 	while (xpAdded < 237500) {
@@ -364,7 +394,7 @@ int Calculate(int rebirth) {
 				}
 			};
 		}
-		xpAdded = xpAdded + 5;
+		xpAdded = xpAdded + 1;
 	}
 	// MUSCLE KING CALCULATIONS
 	std::system("color 0B");
@@ -478,7 +508,7 @@ int Calculate(int rebirth) {
 			};
 
 		}
-		MuscleKingXpAdded = MuscleKingXpAdded + 5;
+		MuscleKingXpAdded = MuscleKingXpAdded + 1;
 	}
 
 	switch (check) {
@@ -494,6 +524,15 @@ int Calculate(int rebirth) {
 			break;
 		}
 	case true:
+		if (DistortionCount > 30) {
+			MessageBox(ConsoleWindow, L"Your rebirth is potentially CORRUPT, please report this issue to Cypher#2763 immediately.", L"RMODULE | XP FORMATTING SYSTEM", MB_ICONWARNING);
+		}
+		if (DistortionCount > 20) {
+			MessageBox(ConsoleWindow, L"Your rebirth has been flagged as increditable for accuracy due to Unexpected Xp Processor Behavior.", L"RMODULE | XP FORMATTING SYSTEM", MB_ICONWARNING);
+		}
+		if (DistortionCount > 10) {
+			MessageBox(ConsoleWindow, L"Your rebirth is potentionally inaccurate on some calculations, be advised.", L"RMODULE | XP FORMATTING SYSTEM",MB_ICONINFORMATION);
+		}
 		std::string OpenFile = "notepad \"" + std::to_string(rebirth) + "_Rebirth_Calculations_Output" + std::to_string(FileAmount) + ".txt" + "\"";
 		std::system(OpenFile.c_str());
 		WriteTo.close();
@@ -877,8 +916,8 @@ int SpoofConsole() {
 	}
 	return 0;
 }
-std::string PreviousVersion = "1.36";
-std::string Version = "1.37";
+std::string PreviousVersion = "1.39";
+std::string Version = "1.40";
 int main() {
 	SetConsoleTitle(L"RebirthCalculator - Muscle Legends");
 	SetupChars();
@@ -906,7 +945,7 @@ int main() {
 		SetConsoleTextAttribute(Console, 7);
 		File.close();
 		std::system("attrib +R Credits.txt");
-		std::string RecentUpdates = "Many attempts to fix an ongoing issue with some Rebirths not being accurate, these rebirths are corrupt and i suggest if you ever see the prompt then hit N to avoid misleading info.";
+		std::string RecentUpdates = "Current major attempts to fix the ongoing inaccuracy with some rebirths output (not a big issue), Muscle King Auras calculations will be fixed in 1.41 for sure. Dm Cypher#2763 for any bug reports.";
 		std::cout << "\nPrevious Version " << PreviousVersion << std::endl;
 		std::cout << "\nVersion " + Version + ", Keep the window at the automatic set size to ensure correct formatting." << std::endl;
 		SetConsoleTextAttribute(Console, 14);
