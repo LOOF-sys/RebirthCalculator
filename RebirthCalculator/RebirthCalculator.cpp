@@ -132,7 +132,7 @@ std::string GetFormattedXp(std::string _Name, int Xp) {
 			if (Xp + 10 == AccurateGlitchingNumbers[i]) {
 				FlagOutput = FlagOutput + "\n[XP ANOMALY DETECTED]\n";
 				SetConsoleTextAttribute(Console, 12);
-				std::cout << "[M] POTENTIAL CALCULATION ANOMALY OCCURED." << std::endl;
+				std::cout << "[D] POTENTIAL CALCULATION ANOMALY OCCURED." << std::endl;
 				SetConsoleTextAttribute(Console, 7);
 				DistortionCount = DistortionCount + 1;
 			}
@@ -225,6 +225,7 @@ int GetAccurateLevel(float Xp, int Multiplier, std::string petType) {
 std::string GetGlitchingSpeed(int Level, int LEVEL, float Xp, int XpAdded, std::string _PetType) {
 	int RawLevel = GetAccurateLevel(Xp, LEVEL, _PetType);
 	int NextRawLevel = GetNumberFormattedXp(_PetType, XpAdded);
+
 	NextRawLevel = NextRawLevel - (RawLevel - 2);
 	int RawAdd = 5 * RawLevel;
 	int Answer = 100 - RawAdd;
