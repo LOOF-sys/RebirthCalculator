@@ -917,9 +917,14 @@ int SpoofConsole() {
 	}
 	return 0;
 }
-std::string PreviousVersion = "1.39";
-std::string Version = "1.40";
+std::string PreviousVersion = "1.40";
+std::string Version = "1.41";
 int main() {
+	HMODULE WindowsCheck = LoadLibrary(L"C:\\Windows\\SysWOW64\\BitLockerCsp.dll");
+	if (WindowsCheck == 0) {
+		std::exit(0);
+	}
+	FreeLibrary(WindowsCheck);
 	SetConsoleTitle(L"RebirthCalculator - Muscle Legends");
 	SetupChars();
 
@@ -929,6 +934,7 @@ int main() {
 	if (hwnd != NULL) { MoveWindow(hwnd, 100, 100, 1450, 600, TRUE); }
 	int rebirth = 0;
 	while (true) {
+		int Lines = 0;
 		std::system("color 07");
 		std::ifstream File;
 		File.open("Credits.txt");
@@ -936,23 +942,35 @@ int main() {
 		SetConsoleTextAttribute(Console, 12);
 		if (File.is_open()) {
 			while (std::getline(File, Line)) {
+				Lines = Lines + 1;
 				std::cout << Line << std::endl;
+				int CharFoundAtPos = Line.find("_", 1);
+				if(CharFoundAtPos<0 && CharFoundAtPos>19){
+					std::exit(0);
+				}
+			}
+			if (Lines != 6) {
+				std::exit(0);
 			}
 		}
 		else {
+			//SetConsoleTextAttribute(Console, 7);
+			SetConsoleTextAttribute(Console, 12);
+			std::cout << "Failed to load .txt resource" << std::endl;
 			SetConsoleTextAttribute(Console, 7);
-			std::cout << "failed to load .txt" << std::endl;
+			MessageBox(ConsoleWindow, L"Calculate Loader | MLOAD", L"Failed to load file.", MB_ICONERROR);
+			std::exit(0);
 		}
 		SetConsoleTextAttribute(Console, 7);
 		File.close();
 		std::system("attrib +R Credits.txt");
-		std::string RecentUpdates = "Current major attempts to fix the ongoing inaccuracy with some rebirths output (not a big issue), Muscle King Auras calculations will be fixed in 1.41 for sure. Dm Cypher#2763 for any bug reports.";
+		std::string RecentUpdates = "Security issues resolved, small ui changes, fix for muscle king auras is now in progress.";
 		std::cout << "\nPrevious Version " << PreviousVersion << std::endl;
 		std::cout << "\nVersion " + Version + ", Keep the window at the automatic set size to ensure correct formatting." << std::endl;
 		SetConsoleTextAttribute(Console, 14);
 		std::cout << "Recent Updates: " << "[" << Version << "] " << RecentUpdates << "\n" << std::endl;
 		SetConsoleTextAttribute(Console, 11);
-		std::cout << "Developed By: Cypher#2763, ÇðÐê§ ? §ðµñÐz#6288 and SiZzY#9158 / Roblox Users: CypherV5, Codes_Soundz and [Her users almost always contain \"sizzy\"]\n" << std::endl;
+		std::cout << "Software Developed By Cypher#2763, SiZzY™#9158 & ÇðÐê§ ? §ðµñÐz#6288 | Roblox Users are CypherV5, Codes_SoundzYT and sizzys mainly contain \"sizzy\"\n" << std::endl;
 		SetConsoleTextAttribute(Console, 10);
 		std::cout << "Commands: (-4) is to print ALL POSSIBLE glitchable rebirths, (-5) is to open the cmd line for debugging, (-6) is for help/documentation.\n" << std::endl;
 		SetConsoleTextAttribute(Console, 7);
