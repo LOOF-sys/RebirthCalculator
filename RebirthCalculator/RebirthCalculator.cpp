@@ -958,7 +958,7 @@ int main() {
 			SetConsoleTextAttribute(Console, 12);
 			std::cout << "Failed to load .txt resource" << std::endl;
 			SetConsoleTextAttribute(Console, 7);
-			MessageBox(ConsoleWindow, L"Calculate Loader | MLOAD", L"Failed to load file.", MB_ICONERROR);
+			MessageBox(ConsoleWindow, L"\"Credits.txt\" is missing",L"Calculate Loader | MLOAD", MB_ICONERROR);
 			std::exit(0);
 		}
 		SetConsoleTextAttribute(Console, 7);
