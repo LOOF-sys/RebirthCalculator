@@ -395,7 +395,7 @@ int Calculate(int rebirth) {
 				}
 			};
 		}
-		xpAdded = xpAdded + 1;
+		xpAdded = xpAdded + 5;
 	}
 	// MUSCLE KING CALCULATIONS
 	std::system("color 0B");
@@ -509,7 +509,7 @@ int Calculate(int rebirth) {
 			};
 
 		}
-		MuscleKingXpAdded = MuscleKingXpAdded + 1;
+		MuscleKingXpAdded = MuscleKingXpAdded + 5;
 	}
 
 	switch (check) {
