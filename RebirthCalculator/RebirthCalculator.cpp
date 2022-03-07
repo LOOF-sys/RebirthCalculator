@@ -917,8 +917,8 @@ int SpoofConsole() {
 	}
 	return 0;
 }
-std::string PreviousVersion = "1.40";
-std::string Version = "1.41";
+std::string PreviousVersion = "1.41";
+std::string Version = "1.42";
 int main() {
 	HMODULE WindowsCheck = LoadLibrary(L"C:\\Windows\\SysWOW64\\BitLockerCsp.dll");
 	if (WindowsCheck == 0) {
@@ -964,9 +964,13 @@ int main() {
 		SetConsoleTextAttribute(Console, 7);
 		File.close();
 		std::system("attrib +R Credits.txt");
-		std::string RecentUpdates = "Security issues resolved, small ui changes, fix for muscle king auras is now in progress.";
+
+		/* version magik */
+		std::string RecentUpdates = "Fixed a very fucked issue with the calculations, +XpAdded module is now accurate again :)";
 		std::cout << "\nPrevious Version " << PreviousVersion << std::endl;
 		std::cout << "\nVersion " + Version + ", Keep the window at the automatic set size to ensure correct formatting." << std::endl;
+		/* ============= */
+
 		SetConsoleTextAttribute(Console, 14);
 		std::cout << "Recent Updates: " << "[" << Version << "] " << RecentUpdates << "\n" << std::endl;
 		SetConsoleTextAttribute(Console, 11);
