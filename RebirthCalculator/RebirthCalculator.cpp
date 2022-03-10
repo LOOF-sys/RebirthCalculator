@@ -999,7 +999,7 @@ int main() {
 		std::system("attrib +R Credits.txt");
 
 		/* version magik */
-		std::string RecentUpdates = "Muscle King Aura Calculations have a *NEW* experimental +Stats Module to fix the 2 week ongoing inaccuracy with there +Stats, This module is still in Beta and Testing.";
+		std::string RecentUpdates = "Muscle King Aura Calculations have a *NEW* experimental +Stats Module to fix the 2 week ongoing inaccuracy with there +Stats, This module is still in Beta and Testing. For simple terms this means that the Muscle King Calculations Module (+Stats Calculator) is now being worked on & Fixed. Expect a fix in the next coming updates & report any bugs to the #bug-reports channel in the discord.";
 		std::cout << "\nPrevious Version " << PreviousVersion << std::endl;
 		std::cout << "\nVersion " + Version + ", Keep the window at the automatic set size to ensure correct formatting." << std::endl;
 		/* ============= */
