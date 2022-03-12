@@ -949,8 +949,8 @@ int SpoofConsole() {
 	}
 	return 0;
 }
-std::string PreviousVersion = "1.42";
-std::string Version = "1.44";
+std::string PreviousVersion = "1.44";
+std::string Version = "1.45";
 int main() {
 	HMODULE WindowsCheck = LoadLibrary(L"C:\\Windows\\SysWOW64\\BitLockerCsp.dll");
 	if (WindowsCheck == 0) {
@@ -998,7 +998,7 @@ int main() {
 		std::system("attrib +R Credits.txt");
 
 		/* version magik */
-		std::string RecentUpdates = "Muscle King Aura Calculations have a *NEW* experimental +Stats Module to fix the 2 week ongoing inaccuracy with there +Stats, This module is still in Beta and Testing. For simple terms this means that the Muscle King Calculations Module (+Stats Calculator) is now being worked on & Fixed. Expect a fix in the next coming updates & report any bugs to the #bug-reports channel in the discord.";
+		std::string RecentUpdates = "Major miscalculations fixed with all rocks, the bad news is that this fix may decrease some of the output per rebirth.";
 		std::cout << "\nPrevious Version " << PreviousVersion << std::endl;
 		std::cout << "\nVersion " + Version + ", Keep the window at the automatic set size to ensure correct formatting." << std::endl;
 		/* ============= */
