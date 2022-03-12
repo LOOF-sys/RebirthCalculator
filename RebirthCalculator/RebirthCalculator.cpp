@@ -321,7 +321,7 @@ int Calculate(int rebirth) {
 		for (int index = 1; index < 100; index++) {
 			float CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 500 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + xpAdded;
 			for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
@@ -332,7 +332,7 @@ int Calculate(int rebirth) {
 			};
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 100 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + xpAdded;
 			for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
@@ -343,7 +343,7 @@ int Calculate(int rebirth) {
 			};
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 45 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + xpAdded;
 			for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
@@ -354,7 +354,7 @@ int Calculate(int rebirth) {
 			};
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 30 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + xpAdded;
 			for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
@@ -365,7 +365,6 @@ int Calculate(int rebirth) {
 			};
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 15 / 2;
-			CalculatedXp = (int)CalculatedXp;
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + xpAdded;
 			for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
@@ -376,7 +375,7 @@ int Calculate(int rebirth) {
 			};
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 8 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + xpAdded;
 			for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
@@ -387,7 +386,7 @@ int Calculate(int rebirth) {
 			};
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 3 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + xpAdded;
 			for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
@@ -398,7 +397,7 @@ int Calculate(int rebirth) {
 			};
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 2 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + xpAdded;
 			for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
@@ -409,7 +408,7 @@ int Calculate(int rebirth) {
 			};
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 1 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + xpAdded;
 			for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
@@ -428,7 +427,7 @@ int Calculate(int rebirth) {
 		for (float index = 1; index < 100; index++) {
 			float CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 500 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + MuscleKingXpAdded;
 			for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
@@ -440,7 +439,7 @@ int Calculate(int rebirth) {
 			//if (MuscleKingCheck == false) {
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 100 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + MuscleKingXpAdded;
 			for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
@@ -453,7 +452,7 @@ int Calculate(int rebirth) {
 			//if (MuscleKingCheck == false) {
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 45 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + MuscleKingXpAdded;
 			for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
@@ -466,7 +465,7 @@ int Calculate(int rebirth) {
 			//if (MuscleKingCheck == false) {
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 30 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + MuscleKingXpAdded;
 			for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
@@ -479,7 +478,7 @@ int Calculate(int rebirth) {
 			//if (MuscleKingCheck == false) {
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 15 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + MuscleKingXpAdded;
 			for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
@@ -492,7 +491,7 @@ int Calculate(int rebirth) {
 			//if (MuscleKingCheck == false) {
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 8 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + MuscleKingXpAdded;
 			for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
@@ -505,7 +504,7 @@ int Calculate(int rebirth) {
 			//if (MuscleKingCheck == false) {
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 3 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + MuscleKingXpAdded;
 			for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
@@ -518,7 +517,7 @@ int Calculate(int rebirth) {
 			//if (MuscleKingCheck == false) {
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 2 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + MuscleKingXpAdded;
 			for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
@@ -531,7 +530,7 @@ int Calculate(int rebirth) {
 			//if (MuscleKingCheck == false) {
 			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 1 / 2;
-			CalculatedXp = (int)CalculatedXp;
+			
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + MuscleKingXpAdded;
 			for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
@@ -583,7 +582,7 @@ int ListCalculate(int rebirth) {
 	for (float index = 1; index < 50; index++) {
 		float CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 500 / 2;
-		CalculatedXp = (int)CalculatedXp;
+		
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
@@ -592,7 +591,7 @@ int ListCalculate(int rebirth) {
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 100 / 2;
-		CalculatedXp = (int)CalculatedXp;
+		
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
@@ -601,7 +600,7 @@ int ListCalculate(int rebirth) {
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 45 / 2;
-		CalculatedXp = (int)CalculatedXp;
+		
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
@@ -610,7 +609,7 @@ int ListCalculate(int rebirth) {
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 30 / 2;
-		CalculatedXp = (int)CalculatedXp;
+		
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
@@ -619,7 +618,7 @@ int ListCalculate(int rebirth) {
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 15 / 2;
-		CalculatedXp = (int)CalculatedXp;
+		
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
@@ -628,7 +627,7 @@ int ListCalculate(int rebirth) {
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 8 / 2;
-		CalculatedXp = (int)CalculatedXp;
+		
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
@@ -637,7 +636,7 @@ int ListCalculate(int rebirth) {
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 3 / 2;
-		CalculatedXp = (int)CalculatedXp;
+		
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
@@ -646,7 +645,7 @@ int ListCalculate(int rebirth) {
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 2 / 2;
-		CalculatedXp = (int)CalculatedXp;
+		
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
@@ -655,7 +654,7 @@ int ListCalculate(int rebirth) {
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 1 / 2;
-		CalculatedXp = (int)CalculatedXp;
+		
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
@@ -748,7 +747,7 @@ int StrictListCalculate(int rebirth) {
 	int index = 1;
 	float CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 500 / 2;
-	CalculatedXp = (int)CalculatedXp;
+	
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 500 / 2;
@@ -763,7 +762,7 @@ int StrictListCalculate(int rebirth) {
 	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 100 / 2;
-	CalculatedXp = (int)CalculatedXp;
+	
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 100 / 2;
@@ -778,7 +777,7 @@ int StrictListCalculate(int rebirth) {
 	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 45 / 2;
-	CalculatedXp = (int)CalculatedXp;
+	
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 45 / 2;
@@ -793,7 +792,7 @@ int StrictListCalculate(int rebirth) {
 	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 30 / 2;
-	CalculatedXp = (int)CalculatedXp;
+	
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 30 / 2;
@@ -808,7 +807,7 @@ int StrictListCalculate(int rebirth) {
 	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 15 / 2;
-	CalculatedXp = (int)CalculatedXp;
+	
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 15 / 2;
@@ -823,7 +822,7 @@ int StrictListCalculate(int rebirth) {
 	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 8 / 2;
-	CalculatedXp = (int)CalculatedXp;
+	
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 8 / 2;
@@ -838,7 +837,7 @@ int StrictListCalculate(int rebirth) {
 	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 3 / 2;
-	CalculatedXp = (int)CalculatedXp;
+	
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 3 / 2;
@@ -853,7 +852,7 @@ int StrictListCalculate(int rebirth) {
 	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 2 / 2;
-	CalculatedXp = (int)CalculatedXp;
+	
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 2 / 2;
@@ -868,7 +867,7 @@ int StrictListCalculate(int rebirth) {
 	WriteToString_S << "\n";
 	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 1 / 2;
-	CalculatedXp = (int)CalculatedXp;
+	
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 1 / 2;
