@@ -558,13 +558,13 @@ int Calculate(int rebirth) {
 		}
 	case true:
 		if (DistortionCount > 30) {
-			MessageBox(ConsoleWindow, L"Your rebirth is potentially CORRUPT, please report this issue to Cypher#2763 immediately.", L"RMODULE | XP FORMATTING SYSTEM", MB_ICONWARNING);
+			MessageBox(ConsoleWindow, L"Exceeded WMAX{NULL,0,30--LLMT (error, cannot deciper the expected max value), Unknown behaviour.", L"KMODULE|XP", MB_ICONWARNING);
 		}
 		if (DistortionCount > 20) {
-			MessageBox(ConsoleWindow, L"Your rebirth has been flagged as increditable for accuracy due to Unexpected Xp Processor Behavior.", L"RMODULE | XP FORMATTING SYSTEM", MB_ICONWARNING);
+			MessageBox(ConsoleWindow, L"Overload at chunck \"WMAX Max = new WMAX{NULL,0,20};Max.MaxWarn[false];--error (value is NULL0)\", Count exceeded", L"KMODULE|XP", MB_ICONWARNING);
 		}
 		if (DistortionCount > 10) {
-			MessageBox(ConsoleWindow, L"Your rebirth is potentionally inaccurate on some calculations, be advised.", L"RMODULE | XP FORMATTING SYSTEM",MB_ICONINFORMATION);
+			MessageBox(ConsoleWindow, L"Your rebirth has been flagged by our automatic anomaly detector, if a calculation is inaccurate, then report it to Cypher#2763", L"KMODULE|XP",MB_ICONINFORMATION);
 		}
 		std::string OpenFile = "notepad \"" + std::to_string(rebirth) + "_Rebirth_Calculations_Output" + std::to_string(FileAmount) + ".txt" + "\"";
 		std::system(OpenFile.c_str());
