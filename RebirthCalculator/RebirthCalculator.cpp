@@ -949,6 +949,8 @@ int SpoofConsole() {
 	}
 	return 0;
 }
+
+#define FUCKING_IMPOSSIBLE 15
 std::string PreviousVersion = "1.44";
 std::string Version = "1.45";
 int main() {
@@ -1110,6 +1112,70 @@ int main() {
 			std::cout << "General usage: With this calculator you can calculate all/any rebirth that can glitch in muscle legends with darkstars(unique pets) & muscle king auras (unique auras), to start off type in any number to calculate, Example: type in 30 and it will print every single possible glitchable method and if that rebirth can glitch, what rock is glitches on, the speed it glitches and the xp it needs to glitch." << std::endl;
 			std::system("pause");
 		}
+		if (rebirth == -7) {
+			int total_health = 0;
+			int hits = 0;
+			int rebirths_value1 = 0;
+			double damage_value1 = 0;
+			double strength_value1 = 0;
+			double strength_value2 = 0;
+			double durability_value1 = 0;
+			int response = 0;
+			std::cout << "\nWhat else do you want to calculate?\n[1] Damage to Strength\n[2] Strength to Damage\n[3] How many hits until death (durability test)\n[4] Rebirths to Strength Multiplier\n[5] Rebirths to Durability Multiplier\n[6] Rebirths to Agility Multiplier\n[7] Rebirthing Speed\n[8] Grinding Speed\n[9] Glitching Speed" << std::endl;
+			std::cin >> response;
+			switch (response) {
+			case 1:
+				std::cout << "What is the damage? " << std::endl;
+				std::cin >> damage_value1;
+				std::cout << "Processing..." << std::endl; // 14.79289940828403
+				std::cout << "The damage converts to " << std::to_string(damage_value1 * 14.79289940828403) << " Strength." << std::endl;
+				std::system("pause"); 
+				std::system("CLS");
+				break;
+			case 2:
+				std::cout << "What is the strength? " << std::endl;
+				std::cin >> strength_value1;
+				std::cout << "Processing..." << std::endl;
+				std::cout << "The strength converts to " << std::to_string(strength_value1 * 0.0676) << " Damage." << std::endl;
+				std::system("pause");
+				std::system("CLS");
+				break;
+			case 3:
+				std::cout << "What is the defenders durability? ";
+				std::cin >> durability_value1;
+				std::cout << "What is your strength? ";
+				std::cin >> strength_value1;
+				damage_value1 = strength_value1 * 0.0676;
+				total_health = 100 + durability_value1;
+				hits = 0;
+				while (hits < 200) {
+					hits++;
+					total_health = total_health - damage_value1;
+					if (hits > 200) {
+						std::cout << "You cannot kill this player." << std::endl;
+						break;
+					}
+					if (total_health <= 0) {
+						std::cout << "To kill this player you need to punch them " << hits << " times." << std::endl;
+						break;
+					}
+				}
+				std::system("pause");
+				std::system("CLS");
+				break;
+			case 4:
+				std::cout << "This feature has been replaced by a superset \"Higher Rebirths Are Obviously Better\"" << std::endl;
+				break;
+			case 5:
+				std::cout << "This feature has been replaced by a superset \"Higher Rebirths Are Obviously Better\"" << std::endl;
+				break;
+			case 6:
+				std::cout << "This feature has been replaced by a superset \"Higher Rebirths Are Obviously Better\"" << std::endl;
+				break;
+			default:
+				std::cout << "not valid" << std::endl; break;
+			}
+		}
 		std::cout << "Calculating..." << std::endl;
 		if (rebirth > 0 && rebirth < 30) {
 			std::cout << "\nYou need atleast 30 rebirths to use a darkstar/muscle king aura so calculating below 30 is useless.\n\n";
@@ -1117,7 +1183,7 @@ int main() {
 			std::system("CLS");
 			continue;
 		}
-		if (rebirth != -6 && rebirth != -5 && rebirth != -4 && rebirth != -3) {
+		if (rebirth != -7 && rebirth != -6 && rebirth != -5 && rebirth != -4 && rebirth != -3) {
 			Calculate(rebirth);
 		}
 		else {
