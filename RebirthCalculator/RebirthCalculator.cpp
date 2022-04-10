@@ -272,7 +272,6 @@ std::string GetGlitchingSpeed(int Level, int LEVEL, float Xp, int XpAdded, std::
 	}
 	return "+" + std::to_string(Answer) + " Stats per punch,";
 }
-
 int FileAmount = 0;
 
 std::string WriteToString_S = "";
@@ -1113,13 +1112,13 @@ int main() {
 			std::system("pause");
 		}
 		if (rebirth == -7) {
-			int total_health = 0;
-			int hits = 0;
-			int rebirths_value1 = 0;
-			double damage_value1 = 0;
-			double strength_value1 = 0;
-			double strength_value2 = 0;
-			double durability_value1 = 0;
+			long long int total_health = 0;
+			long long int hits = 0;
+			long long int rebirths_value1 = 0;
+			long double damage_value1 = 0;
+			long double strength_value1 = 0;
+			long double strength_value2 = 0;
+			long double durability_value1 = 0;
 			int response = 0;
 			std::cout << "\nWhat else do you want to calculate?\n[1] Damage to Strength\n[2] Strength to Damage\n[3] How many hits until death (durability test)\n[4] Rebirths to Strength Multiplier\n[5] Rebirths to Durability Multiplier\n[6] Rebirths to Agility Multiplier\n[7] Rebirthing Speed\n[8] Grinding Speed\n[9] Glitching Speed" << std::endl;
 			std::cin >> response;
@@ -1148,17 +1147,17 @@ int main() {
 				damage_value1 = strength_value1 * 0.0676;
 				total_health = 100 + durability_value1;
 				hits = 0;
-				while (hits < 200) {
+				while (true) {
 					hits++;
 					total_health = total_health - damage_value1;
-					if (hits > 200) {
-						std::cout << "You cannot kill this player." << std::endl;
-						break;
-					}
-					if (total_health <= 0) {
+					if (total_health <= 0 && hits<200) {
 						std::cout << "To kill this player you need to punch them " << hits << " times." << std::endl;
 						break;
 					}
+				}
+				if (hits > 199) {
+					std::cout << "You cannot kill this player... But if you could it would take " << hits << " LOL" << std::endl;
+					break;
 				}
 				std::system("pause");
 				std::system("CLS");
