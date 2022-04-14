@@ -1147,17 +1147,17 @@ int main() {
 				damage_value1 = strength_value1 * 0.0676;
 				total_health = 100 + durability_value1;
 				hits = 0;
-				while (true) {
+				while (hits<300) {
 					hits++;
 					total_health = total_health - damage_value1;
-					if (total_health <= 0 && hits<200) {
+					if (hits > 299) {
+						std::cout << "You cannot kill this player, get better." << std::endl;
+						break;
+					}
+					if (total_health <= 0) {
 						std::cout << "To kill this player you need to punch them " << hits << " times." << std::endl;
 						break;
 					}
-				}
-				if (hits > 199) {
-					std::cout << "You cannot kill this player... But if you could it would take " << hits << " LOL" << std::endl;
-					break;
 				}
 				std::system("pause");
 				std::system("CLS");
