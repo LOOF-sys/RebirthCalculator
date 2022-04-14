@@ -951,7 +951,7 @@ int SpoofConsole() {
 
 #define FUCKING_IMPOSSIBLE 15
 std::string PreviousVersion = "1.44";
-std::string Version = "1.45";
+std::string Version = "1.56";
 int main() {
 	HMODULE WindowsCheck = LoadLibrary(L"C:\\Windows\\SysWOW64\\BitLockerCsp.dll");
 	if (WindowsCheck == 0) {
@@ -999,7 +999,7 @@ int main() {
 		std::system("attrib +R Credits.txt");
 
 		/* version magik */
-		std::string RecentUpdates = "Major miscalculations fixed with all rocks, the bad news is that this fix may decrease some of the output per rebirth.";
+		std::string RecentUpdates = "New features (type -7), Everything is confirmed accurate (since 1 month ago) No issues, This Software is no logner public either.";
 		std::cout << "\nPrevious Version " << PreviousVersion << std::endl;
 		std::cout << "\nVersion " + Version + ", Keep the window at the automatic set size to ensure correct formatting." << std::endl;
 		/* ============= */
@@ -1007,22 +1007,24 @@ int main() {
 		SetConsoleTextAttribute(Console, 14);
 		std::cout << "Recent Updates: " << "[" << Version << "] " << RecentUpdates << "\n" << std::endl;
 		SetConsoleTextAttribute(Console, 11);
-		std::cout << "Software Developed By Cypher#2763, SiZzY™#9158 & ÇðÐê§ ? §ðµñÐz#6288 | Roblox Users are CypherV5, Codes_SoundzYT and sizzys mainly contain \"sizzy\"\n" << std::endl;
+		std::cout << "Software Developed By Cypher#0006, impicklerick83#8484, SiZzY#9158 & Codes Soundz (Youtube Channel)" << std::endl;
+		SetConsoleTextAttribute(Console, 9);
+		std::cout << "Roblox Contacts | CypherV5, impicklerick83, Codes_SoundzYT and Sizzy's usually just contain \"Sizzy\" lol" << std::endl;
 		SetConsoleTextAttribute(Console, 10);
-		std::cout << "Commands: (-4) is to print ALL POSSIBLE glitchable rebirths, (-5) is to open the cmd line for debugging, (-6) is for help/documentation.\n" << std::endl;
+		std::cout << "Commands: (-4) shows all Glitchable Rebirths, (-5) open's the cmd line for debugging, (-6) is for help/documentation. (-7) For extra features\n" << std::endl;
 		SetConsoleTextAttribute(Console, 7);
 		std::cout << "Type rebirth here: ";
 		std::cin >> rebirth;
 		if (rebirth == 0) {
 			std::system("CLS");
 			std::cout << "Process error.";
-			MessageBox(hwnd, L"Cannot cast LPCWSTR(lpText) to type \"int\", Do not do that again", L"RebirthCalculator.exe", MB_ICONERROR);
+			MessageBox(hwnd, L"Thats not a number dude", L"RebirthCalculator.exe", MB_ICONERROR);
 			std::exit(0);
 		}
 		if (rebirth >= INT_MAX || rebirth <= INT_MIN) {
 			std::system("CLS");
 			std::cout << "Process error.";
-			MessageBox(hwnd, L"Type int exceeded", L"RebirthCalculator.exe", MB_ICONERROR);
+			MessageBox(hwnd, L"That damn number wont fucking glitch anyway, way too fucking high", L"RebirthCalculator.exe", MB_ICONERROR);
 			std::exit(0);
 		}
 		if (rebirth == -3) {
@@ -1030,6 +1032,11 @@ int main() {
 			std::system("CLS");
 			std::cout << "Verification code: ";
 			std::cin >> Code;
+			__asm {
+				mov eax,1
+				mov ebx,1
+				cmp eax,ebx	
+			}
 			if (Code != "Verification_Code_1485023_4830038_oPC29__+==+-_-@@33%%^3#_Cypher0F_TRebCalculator__Encryption+KEy__)0") {
 				std::exit(0);
 			}
