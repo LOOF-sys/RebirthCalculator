@@ -1185,6 +1185,7 @@ int main() {
 			case 5:
 				std::cout << "Rebirth Calculator was Developed by the following people:" << std::endl;
 				std::cout << "Cypher#0006 / CypherV5 | programmer & leader of the development of Rebirth Calculator Software\nimpicklerick83#8484 / impicklerick83 | Backend mathmatics and played a huge role in verifiying it was accurate\nSiZzY#9158 / ErisaSilvan | Muscle King Aura mathmatics & designing in Rebirth Calculator's Equations, tested and verified it.\n[Unicode discord] / Codes_SoundzYT | Co-Founder of Rebirth Calculator Software, Developed the idea with me(Cypher) 2 months before it released." << std::endl;
+				std::system("pause");
 				break;
 			default:
 				std::cout << "not valid" << std::endl; break;
