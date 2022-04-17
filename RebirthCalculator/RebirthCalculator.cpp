@@ -1007,9 +1007,9 @@ int main() {
 		SetConsoleTextAttribute(Console, 14);
 		std::cout << "Recent Updates: " << "[" << Version << "] " << RecentUpdates << "\n" << std::endl;
 		SetConsoleTextAttribute(Console, 11);
-		std::cout << "Software Developed By Cypher#0006, impicklerick83#8484, SiZzY#9158 & Codes Soundz (Youtube Channel)" << std::endl;
+		std::cout << "Software Developed By Cypher#0006, impicklerick83#8484 and SiZzY#9158" << std::endl;
 		SetConsoleTextAttribute(Console, 9);
-		std::cout << "Roblox Contacts | CypherV5, impicklerick83, Codes_SoundzYT and Sizzy's usually just contain \"Sizzy\" lol" << std::endl;
+		std::cout << "Roblox Contacts | CypherV5, impicklerick83 and Sizzy's usually just contain \"Sizzy\" lol" << std::endl;
 		SetConsoleTextAttribute(Console, 10);
 		std::cout << "Commands: (-4) shows all Glitchable Rebirths, (-5) open's the cmd line for debugging, (-6) is for help/documentation. (-7) For extra features\n" << std::endl;
 		SetConsoleTextAttribute(Console, 7);
