@@ -949,7 +949,6 @@ int SpoofConsole() {
 	return 0;
 }
 
-#define FUCKING_IMPOSSIBLE 15
 std::string PreviousVersion = "1.44";
 std::string Version = "1.56";
 int main() {
@@ -991,7 +990,7 @@ int main() {
 			SetConsoleTextAttribute(Console, 12);
 			std::cout << "Failed to load .txt resource" << std::endl;
 			SetConsoleTextAttribute(Console, 7);
-			MessageBox(ConsoleWindow, L"\"Credits.txt\" is missing",L"Calculate Loader | MLOAD", MB_ICONERROR);
+			MessageBox(ConsoleWindow, L"\"Credits.txt\" is missing",L"Rebirth Calculator | LOADER", MB_ICONERROR);
 			std::exit(0);
 		}
 		SetConsoleTextAttribute(Console, 7);
