@@ -948,9 +948,11 @@ int SpoofConsole() {
 	}
 	return 0;
 }
+std::string RunClock = "start bin\\clock.exe ";
+std::string RunClockHelp = "notepad bin\\help.txt";
 
-std::string PreviousVersion = "1.44";
-std::string Version = "1.56";
+std::string PreviousVersion = "1.56";
+std::string Version = "1.57";
 int main() {
 	HMODULE WindowsCheck = LoadLibrary(L"C:\\Windows\\SysWOW64\\BitLockerCsp.dll");
 	if (WindowsCheck == 0) {
@@ -996,9 +998,8 @@ int main() {
 		SetConsoleTextAttribute(Console, 7);
 		File.close();
 		std::system("attrib +R Credits.txt");
-
 		/* version magik */
-		std::string RecentUpdates = "New features (type -7), Everything is confirmed accurate (since 1 month ago) No issues, This Software is no logner public either.";
+		std::string RecentUpdates = "(NEW MAJOR FEATURES) type (-7), Changed up the credits a little bit and changed some of the backend shit of the Software, Any bug reports, report them to the discord server https://discord.gg/6Z5BBgDG5b";
 		std::cout << "\nPrevious Version " << PreviousVersion << std::endl;
 		std::cout << "\nVersion " + Version + ", Keep the window at the automatic set size to ensure correct formatting." << std::endl;
 		/* ============= */
@@ -1006,9 +1007,9 @@ int main() {
 		SetConsoleTextAttribute(Console, 14);
 		std::cout << "Recent Updates: " << "[" << Version << "] " << RecentUpdates << "\n" << std::endl;
 		SetConsoleTextAttribute(Console, 11);
-		std::cout << "Software Developed By Cypher#0006, impicklerick83#8484 and SiZzY#9158" << std::endl;
+		std::cout << "Software Developed By Cypher#0006, impicklerick83#8484, SiZzY#9158 & Codes Soundz (Youtube Channel)" << std::endl;
 		SetConsoleTextAttribute(Console, 9);
-		std::cout << "Roblox Contacts | CypherV5, impicklerick83 and Sizzy's usually just contain \"Sizzy\" lol" << std::endl;
+		std::cout << "Roblox Contacts | CypherV5, impicklerick83, Codes_Soundz and Sizzy's usually just contain \"Sizzy\" lol" << std::endl;
 		SetConsoleTextAttribute(Console, 10);
 		std::cout << "Commands: (-4) shows all Glitchable Rebirths, (-5) open's the cmd line for debugging, (-6) is for help/documentation. (-7) For extra features\n" << std::endl;
 		SetConsoleTextAttribute(Console, 7);
@@ -1118,6 +1119,8 @@ int main() {
 			std::system("pause");
 		}
 		if (rebirth == -7) {
+			char yes_or_no = 0;
+			int WaitTime = 0;
 			long long int total_health = 0;
 			long long int hits = 0;
 			long long int rebirths_value1 = 0;
@@ -1126,7 +1129,7 @@ int main() {
 			long double strength_value2 = 0;
 			long double durability_value1 = 0;
 			int response = 0;
-			std::cout << "\nWhat else do you want to calculate?\n[1] Damage to Strength\n[2] Strength to Damage\n[3] How many hits until death (durability test)\n[4] Rebirths to Strength Multiplier\n[5] Rebirths to Durability Multiplier\n[6] Rebirths to Agility Multiplier\n[7] Rebirthing Speed\n[8] Grinding Speed\n[9] Glitching Speed" << std::endl;
+			std::cout << "\nWhat else do you want to calculate?\n[1] Damage to Strength\n[2] Strength to Damage\n[3] How many hits until death (durability test)\n[4] Seconds to accurate time (new)\n[5] Credits (in depth)" << std::endl;
 			std::cin >> response;
 			switch (response) {
 			case 1:
@@ -1169,13 +1172,19 @@ int main() {
 				std::system("CLS");
 				break;
 			case 4:
-				std::cout << "This feature has been replaced by a superset \"Higher Rebirths Are Obviously Better\"" << std::endl;
+				std::cout << "do you need help on using this cmd? Y/N ";
+				std::cin >> yes_or_no;
+				if (yes_or_no == 'Y' || yes_or_no == 'y') {
+					std::system(RunClockHelp.c_str());
+				}
+				std::cout << "What is the amount of seconds you want to wait? ";
+				std::cin >> WaitTime;
+				RunClock = RunClock + std::to_string(WaitTime);
+				std::system(RunClock.c_str());
 				break;
 			case 5:
-				std::cout << "This feature has been replaced by a superset \"Higher Rebirths Are Obviously Better\"" << std::endl;
-				break;
-			case 6:
-				std::cout << "This feature has been replaced by a superset \"Higher Rebirths Are Obviously Better\"" << std::endl;
+				std::cout << "Rebirth Calculator was Developed by the following people:" << std::endl;
+				std::cout << "Cypher#0006 / CypherV5 | programmer & leader of the development of Rebirth Calculator Software\nimpicklerick83#8484 / impicklerick83 | Backend mathmatics and played a huge role in verifiying it was accurate\nSiZzY#9158 / ErisaSilvan | Muscle King Aura mathmatics & designing in Rebirth Calculator's Equations, tested and verified it.\n[Unicode discord] / Codes_SoundzYT | Co-Founder of Rebirth Calculator Software, Developed the idea with me(Cypher) 2 months before it released." << std::endl;
 				break;
 			default:
 				std::cout << "not valid" << std::endl; break;
