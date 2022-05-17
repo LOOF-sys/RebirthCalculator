@@ -24,14 +24,14 @@ const char* Developers[20] = {
 };
 
 // pre definitions
-bool ResetThread();
-void LegendsOfSpeedMode();
-void MuscleLegendsMode();
-void NinjaLegendsMode();
+bool ResetThread(short setting);
+bool LegendsOfSpeedMode();
+bool MuscleLegendsMode();
+bool NinjaLegendsMode();
 
 int main() {
 	MoveWindow(Console, 200, 200, 1500, 600, true);
-	SetConsoleTitleA("Rebirth Calculator V2 [CYPHER SOFTWARE]");
+	SetConsoleTitleA("Rebirth Calculator V2 [Evolved]");
 	std::ifstream File("Credits.txt", std::ios::in);
 	if (File.is_open() == false) {
 		MessageBoxA(ConsoleWindow, "Couldn't locate \"Credits.txt\" lol", "Rebirth Calculator Security", MB_ICONERROR);
@@ -52,14 +52,14 @@ int main() {
 	SetConsoleTextColorDefault();
 
 	// Credits and version shit
-	SetConsoleTextAttribute(ConsoleOutput, 14);
-	std::cout << "\nRebirth Calculator was Developed By: Cypher#6678\n" << std::endl;
-
 	SetConsoleTextAttribute(ConsoleOutput, 11);
+	std::cout << "Rebirth Calculator was Developed By: Cypher#6678, SiZzY#9158 & impicklerick83#8484\nRoblox Users: CypherV5, impicklerick83 & Sizzys always contain \"Sizzy\" lol\n" << std::endl;
+
+	SetConsoleTextAttribute(ConsoleOutput, 10);
 	std::cout << "Last Version: " << LastVersion << std::endl;
 	std::cout << "Current Version: " << CurrentVersion << "\n" << std::endl;
 
-	SetConsoleTextAttribute(ConsoleOutput, 10);
+	SetConsoleTextAttribute(ConsoleOutput, 14);
 	std::cout << "Patch notes: " << CurrentVersionInfo << "\n" << std::endl;
 
 	SetConsoleTextColorDefault();
@@ -70,36 +70,81 @@ int main() {
 
 	if (Option == "LOS") {
 		std::cout << "Reloading into Legends Of Speed Mode..." << std::endl;
-		ResetThread();
+		ResetThread(1);
 		LegendsOfSpeedMode();
+	}
+	if (Option == "ML") {
+		std::cout << "Reloading into Muscle Legends Mode..." << std::endl;
+		ResetThread(1);
+		MuscleLegendsMode();
 	}
 }
 
 #pragma region Definitions
 
-void LegendsOfSpeedMode() {
+bool LegendsOfSpeedMode() {
+	long long Rebirth;
 	short Answer;
 	std::cout << "Loading into Legends Of Shit Mode..." << std::endl;
 	while (true) {
-		ResetThread();
+		ResetThread(1);
 		std::cout << "What would you like to calculate?\nOptions are: 1 = Glitchable Rebirths\n2 = Output All Glitchable Rebirths\n3 = Rebirth Time\n4 = Time needed to make a glitch pet at a certain rebirth\n\nYour Answer: ";
 		std::cin >> Answer;
 		switch (Answer) {
 		case 1:
-			// finish this tommorrow [DBKHJbgjlwfgvewklhfgkHLGVFHKJLFGHJFKLGEFGSHJGDJWDKOGWYUDFGYWFGOIW]
+			ResetThread(1);
+			std::cout << "Type your rebirth here: ";
+			std::cin >> Rebirth;
+			std::cout << "Calculating..." << std::endl;
 		}
 	}
 }
 
-void MuscleLegendsMode() {
+#define _write(f,s) f.write(s, sizeof(s));
+
+bool CalculateRebirth(long Rebirth) {
+	std::ofstream Output("MuscleLegendsOutput.txt", std::ios::out);
+	if (Output.is_open() == false) {
+		MessageBoxA(ConsoleWindow, "Critical Error: 0x0F", "Rebirth Calculator Error Handler", MB_ICONERROR);
+		return false;
+	}
+
+	long XpModification = 0;
+	while(XpModification<)
+
+	_write(Output, "ez");
+	return true;
+}
+bool MuscleLegendsMode() {
+	long long Rebirth;
+	short Answer;
+	std::cout << "Loading into Muscle Legends Mode..." << std::endl;
+	while (true) {
+		ResetThread(1);
+		std::cout << "What would you like to calculate?\nOptions are: 1 = Glitchable Rebirths\n2 = Output All Glitchable Rebirths\n3 = Rebirth Time\n4 = Time needed to make a glitch pet at a certain rebirth\n\nYour Answer: ";
+		std::cin >> Answer;
+		switch (Answer) {
+		case 1:
+			ResetThread(1);
+			std::cout << "Type your rebirth here: ";
+			std::cin >> Rebirth;
+			std::cout << "Calculating..." << std::endl;
+			CalculateRebirth(Rebirth);
+			std::system("pause");
+		case 2:
+			break;
+		default:
+			break;
+		}
+	}
+	return true;
+}
+
+bool NinjaLegendsMode() {
 
 }
 
-void NinjaLegendsMode() {
-
-}
-
-bool ResetThread() {
+bool ResetThread(short setting) {
 	std::system("CLS");
 	std::ifstream File("Credits.txt", std::ios::in);
 	if (File.is_open() == false) {
@@ -108,14 +153,34 @@ bool ResetThread() {
 	}
 
 	SetConsoleTextAttribute(ConsoleOutput, 12);
+
 	short LineIndex = 0;
+	short MaxIndex;
+	short MinIndex;
+
+	switch (setting) {
+	case 0:
+		MinIndex = 0;
+		MaxIndex = 6;
+		break;
+	case 1:
+		MinIndex = 7;
+		MaxIndex = 12;
+		break;
+	default:
+		MinIndex = 0;
+		MaxIndex = 5;
+		break;
+	}
 	std::string Line;
 	while (std::getline(File, Line)) {
-		if (LineIndex > 5) {
+		if (LineIndex > MaxIndex) {
 			break;
 		}
 		LineIndex++;
-		std::cout << Line << std::endl;
+		if (LineIndex > MinIndex) {
+			std::cout << Line << std::endl;
+		}
 	}
 	File.close();
 
