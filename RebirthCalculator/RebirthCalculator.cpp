@@ -100,19 +100,91 @@ bool LegendsOfSpeedMode() {
 	}
 }
 
-#define _write(f,s) f.write(s, sizeof(s));
-
 bool CalculateRebirth(long Rebirth) {
-	std::ofstream Output("MuscleLegendsOutput.txt", std::ios::out);
-	if (Output.is_open() == false) {
+	std::ofstream output("MuscleLegendsOutput.txt", std::ios::out);
+	if (output.is_open() == false) {
 		MessageBoxA(ConsoleWindow, "Critical Error: 0x0F", "Rebirth Calculator Error Handler", MB_ICONERROR);
 		return false;
 	}
 
-	long XpModification = 0;
-	while(XpModification<)
+	std::cout << "Running..." << std::endl;
 
-	_write(Output, "ez");
+	float RebirthXp = 5 * (static_cast<float>(Rebirth) / 100 + 1);
+
+	short Rocks = 1;
+
+	float XpMultiplier = 0.0f;
+	const char* Rock = "";
+
+	long TempLevel = 1;
+	float TempRXP = RebirthXp;
+	long XpModification = 0;
+	while (XpModification < 262500) {
+		while (Rocks < 9) {
+			switch (Rocks) {
+			case 1:
+				XpMultiplier = 250.0f;
+				Rock = "Muscle King Rock";
+				break;
+			case 2:
+				XpMultiplier = 50.0f;
+				Rock = "Legends Gym Rock";
+				break;
+			case 3:
+				XpMultiplier = 22.5f;
+				Rock = "Eternal Gym Rock";
+				break;
+			case 4:
+				XpMultiplier = 15.0f;
+				Rock = "Mythical Gym Rock";
+				break;
+			case 5:
+				XpMultiplier = 7.5f;
+				Rock = "Frost Gym Rock";
+				break;
+			case 6:
+				XpMultiplier = 4.0f;
+				Rock = "Golden Rock";
+				break;
+			case 7:
+				XpMultiplier = 1.5f;
+				Rock = "100 Rock";
+				break;
+			case 8:
+				XpMultiplier = 1.0f;
+				Rock = "10 Rock";
+				break;
+			case 9:
+				XpMultiplier = 0.5f;
+				Rock = "Tiny Gym Rock";
+				break;
+			default:
+				break;
+			}
+			while (TempLevel < 20) {
+				for (short i = 0; i < sizeof(MuscleLegends::AccurateGlitchingNumbers) / sizeof(MuscleLegends::AccurateGlitchingNumbers[0]); i++) {
+					TempRXP = RebirthXp;
+					TempRXP = TempRXP * XpMultiplier;
+
+					TempRXP = TempRXP * TempLevel;
+					TempRXP = TempRXP + XpModification;
+					if (TempRXP == MuscleLegends::AccurateGlitchingNumbers[i]) {
+						std::string Output = std::to_string(Rebirth) + " Rebirths can glitch on " + Rock + ", Pet Glitches at Level " + std::to_string(MuscleLegends::GetUniquePetLevel(TempRXP, 0)) + ", Xp " + std::to_string(MuscleLegends::LEFT_OVER_XP) + " | Xp Modification Required: Level " + std::to_string(MuscleLegends::GetUniquePetLevel(XpModification, 0)) + ", Xp " + std::to_string(MuscleLegends::LEFT_OVER_XP) + "\n";
+						output.write(Output.c_str(), Output.size());
+					}
+				}
+				TempLevel++;
+			}
+			XpMultiplier++;
+			Rocks++;
+			TempLevel = 0;
+		}
+		XpMultiplier = 0;
+		Rocks = 1;
+		TempLevel = 0;
+		XpModification = XpModification + 5;
+	}
+	TempRXP = RebirthXp;
 	return true;
 }
 bool MuscleLegendsMode() {

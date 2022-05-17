@@ -61,6 +61,10 @@ namespace MuscleLegends {
 		return Level;
 	}
 
+	const char* PetXpToLevelAndXp(long Xp) {
+
+	}
+
 	short GetUniquePetStats(long CurrentPetLevel, long LeftOverXp, long PetJumpXp) {
 		long CurrentXpEstimate = AccurateGlitchingNumbers[CurrentPetLevel] + LeftOverXp;
 
