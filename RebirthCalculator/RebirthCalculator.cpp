@@ -84,7 +84,10 @@ void LegendsOfSpeedMode() {
 		ResetThread();
 		std::cout << "What would you like to calculate?\nOptions are: 1 = Glitchable Rebirths\n2 = Output All Glitchable Rebirths\n3 = Rebirth Time\n4 = Time needed to make a glitch pet at a certain rebirth\n\nYour Answer: ";
 		std::cin >> Answer;
-		switch(Answer)
+		switch (Answer) {
+		case 1:
+			// finish this tommorrow [DBKHJbgjlwfgvewklhfgkHLGVFHKJLFGHJFKLGEFGSHJGDJWDKOGWYUDFGYWFGOIW]
+		}
 	}
 }
 
