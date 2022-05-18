@@ -24,9 +24,4 @@
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Mapping.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
 </Project>

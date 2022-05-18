@@ -144,9 +144,6 @@
   <ItemGroup>
     <Text Include="Credits.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Mapping.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
