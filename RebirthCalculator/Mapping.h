@@ -26,7 +26,7 @@ namespace MuscleLegends {
 		23750, // level 19
 		25000 // level 20
 	};
-
+		
 	// Unique Pet Mappings Without subtracting the Xp Every Level (the xp adds up to the next levels xp)
 	float AccurateGlitchingNumbers[20] = {1250,3750,7500,12500,18750,26250,35000,45000,56250,68750,82500,97500,113750,131250,150000,170000,191250,213750,237500,262500};
 
@@ -47,8 +47,11 @@ namespace MuscleLegends {
 
 		short Level = 0;
 
+		std::cout << Xp << std::endl;
+
 		for (short i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
-			if (TotalXp > AccurateGlitchingNumbers[i]) {
+			if (TotalXp >= AccurateGlitchingNumbers[i]) {
+				std::cout << i << std::endl;
 				Level = i + 1;
 			}
 			else {
@@ -61,8 +64,10 @@ namespace MuscleLegends {
 		return Level;
 	}
 
-	const char* PetXpToLevelAndXp(long Xp) {
-
+	int GetUniquePetActualLevel(float Xp, long Multiplier) {
+		Xp = Xp / Multiplier;
+		Xp = Xp * (Multiplier + 1);
+		long LeftOver;
 	}
 
 	short GetUniquePetStats(long CurrentPetLevel, long LeftOverXp, long PetJumpXp) {

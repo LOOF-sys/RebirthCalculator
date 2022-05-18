@@ -168,8 +168,9 @@ bool CalculateRebirth(long Rebirth) {
 
 					TempRXP = TempRXP * TempLevel;
 					TempRXP = TempRXP + XpModification;
+
 					if (TempRXP == MuscleLegends::AccurateGlitchingNumbers[i]) {
-						std::string Output = std::to_string(Rebirth) + " Rebirths can glitch on " + Rock + ", Pet Glitches at Level " + std::to_string(MuscleLegends::GetUniquePetLevel(TempRXP, 0)) + ", Xp " + std::to_string(MuscleLegends::LEFT_OVER_XP) + " | Xp Modification Required: Level " + std::to_string(MuscleLegends::GetUniquePetLevel(XpModification, 0)) + ", Xp " + std::to_string(MuscleLegends::LEFT_OVER_XP) + "\n";
+						std::string Output = std::to_string(Rebirth) + " Rebirths can glitch on " + Rock + ", Pet Glitches at Level " + std::to_string(MuscleLegends::GetUniquePetActualLevel(TempRXP,TempLevel)) + ", Xp " + std::to_string(MuscleLegends::LEFT_OVER_XP) + " | Xp Modification Required: Level " + std::to_string(MuscleLegends::GetUniquePetLevel(XpModification, 0)) + ", Xp " + std::to_string(MuscleLegends::LEFT_OVER_XP) + "\n";
 						output.write(Output.c_str(), Output.size());
 					}
 				}
