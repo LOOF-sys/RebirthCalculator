@@ -1002,9 +1002,9 @@ int main() {
 		SetConsoleTextAttribute(Console, 14);
 		std::cout << "Recent Updates: " << "[" << Version << "] " << RecentUpdates << "\n" << std::endl;
 		SetConsoleTextAttribute(Console, 11);
-		std::cout << "Software Developed By Cypher#0006, impicklerick83#8484, SiZzY#9158 & Codes Soundz (Youtube Channel)" << std::endl;
+		std::cout << "Software Developed By wcypher, impicklerick83#8484 & SiZzY#9158" << std::endl;
 		SetConsoleTextAttribute(Console, 9);
-		std::cout << "Roblox Contacts | CypherV5, impicklerick83, Codes_Soundz and Sizzy's usually just contain \"Sizzy\" lol" << std::endl;
+		std::cout << "Roblox Contacts | CypherV5, impicklerick83 and Sizzy's usually just contain \"Sizzy\" lol" << std::endl;
 		SetConsoleTextAttribute(Console, 10);
 		std::cout << "Commands: (-4) shows all Glitchable Rebirths, (-5) open's the cmd line for debugging, (-6) is for help/documentation. (-7) For extra features\n" << std::endl;
 		SetConsoleTextAttribute(Console, 7);
@@ -1174,7 +1174,7 @@ int main() {
 				break;
 			case 5:
 				std::cout << "Rebirth Calculator was Developed by the following people:" << std::endl;
-				std::cout << "Cypher#0006 / CypherV5 | programmer & leader of the development of Rebirth Calculator Software\nimpicklerick83#8484 / impicklerick83 | Backend mathmatics and played a huge role in verifiying it was accurate\nSiZzY#9158 / ErisaSilvan | Muscle King Aura mathmatics & designing in Rebirth Calculator's Equations, tested and verified it.\n[Unicode discord] / Codes_SoundzYT | Co-Founder of Rebirth Calculator Software, Developed the idea with me(Cypher) 2 months before it released." << std::endl;
+				std::cout << "wcypher on discord | developer of Rebirth Calculator Software\nimpicklerick83#8484 / impicklerick83 | Backend mathmatics and played a huge role in verifiying it was accurate\nSiZzY#9158 / ErisaSilvan | Muscle King Aura mathmatics & designing in Rebirth Calculator's Equations, tested and verified it." << std::endl;
 				std::system("pause");
 				break;
 			default:
