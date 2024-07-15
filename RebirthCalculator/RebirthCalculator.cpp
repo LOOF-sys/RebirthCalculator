@@ -556,15 +556,6 @@ int Calculate(int rebirth) {
 			break;
 		}
 	case true:
-		if (DistortionCount > 30) {
-			MessageBox(ConsoleWindow, L"Exceeded WMAX{NULL,0,30--LLMT (error, cannot deciper the expected max value), Unknown behaviour.", L"KMODULE|XP", MB_ICONWARNING);
-		}
-		if (DistortionCount > 20) {
-			MessageBox(ConsoleWindow, L"Overload at chunck \"WMAX Max = new WMAX{NULL,0,20};Max.MaxWarn[false];--error (value is NULL0)\", Count exceeded", L"KMODULE|XP", MB_ICONWARNING);
-		}
-		if (DistortionCount > 10) {
-			MessageBox(ConsoleWindow, L"Your rebirth has been flagged by our automatic anomaly detector, if a calculation is inaccurate, then report it to Cypher#2763", L"KMODULE|XP", MB_ICONINFORMATION);
-		}
 		std::string OpenFile = "notepad \"" + std::to_string(rebirth) + "_Rebirth_Calculations_Output" + std::to_string(FileAmount) + ".txt" + "\"";
 		std::system(OpenFile.c_str());
 		WriteTo.close();
@@ -954,7 +945,7 @@ std::string RunClockHelp = "notepad bin\\help.txt";
 std::string PreviousVersion = "1.56";
 std::string Version = "1.57";
 int main() {
-	SetConsoleTitle(L"RebirthCalculator - Muscle Legends");
+	SetConsoleTitle("RebirthCalculator - Muscle Legends");
 	SetupChars();
 
 	std::thread EnableRandom(Timer);
@@ -987,7 +978,7 @@ int main() {
 			SetConsoleTextAttribute(Console, 12);
 			std::cout << "Failed to load .txt resource" << std::endl;
 			SetConsoleTextAttribute(Console, 7);
-			MessageBox(ConsoleWindow, L"\"Credits.txt\" is missing", L"Rebirth Calculator | LOADER", MB_ICONERROR);
+			MessageBox(ConsoleWindow, "\"Credits.txt\" is missing", "Rebirth Calculator | LOADER", MB_ICONERROR);
 			std::exit(0);
 		}
 		SetConsoleTextAttribute(Console, 7);
@@ -1002,9 +993,7 @@ int main() {
 		SetConsoleTextAttribute(Console, 14);
 		std::cout << "Recent Updates: " << "[" << Version << "] " << RecentUpdates << "\n" << std::endl;
 		SetConsoleTextAttribute(Console, 11);
-		std::cout << "Software Developed By wcypher, impicklerick83#8484 & SiZzY#9158" << std::endl;
-		SetConsoleTextAttribute(Console, 9);
-		std::cout << "Roblox Contacts | CypherV5, impicklerick83 and Sizzy's usually just contain \"Sizzy\" lol" << std::endl;
+		std::cout << "Software created by Cypher (discord: wcypher) | https://github.com/LOOF-sys" << std::endl;
 		SetConsoleTextAttribute(Console, 10);
 		std::cout << "Commands: (-4) shows all Glitchable Rebirths, (-5) open's the cmd line for debugging, (-6) is for help/documentation. (-7) For extra features\n" << std::endl;
 		SetConsoleTextAttribute(Console, 7);
@@ -1013,13 +1002,13 @@ int main() {
 		if (rebirth == 0) {
 			std::system("CLS");
 			std::cout << "Process error.";
-			MessageBox(hwnd, L"Thats not a number dude", L"RebirthCalculator.exe", MB_ICONERROR);
+			MessageBox(hwnd, "Thats not a number dude", "RebirthCalculator.exe", MB_ICONERROR);
 			std::exit(0);
 		}
 		if (rebirth >= INT_MAX || rebirth <= INT_MIN) {
 			std::system("CLS");
 			std::cout << "Process error.";
-			MessageBox(hwnd, L"That damn number wont fucking glitch anyway, way too fucking high", L"RebirthCalculator.exe", MB_ICONERROR);
+			MessageBox(hwnd, "That damn number wont fucking glitch anyway, way too fucking high", "RebirthCalculator.exe", MB_ICONERROR);
 			std::exit(0);
 		}
 		if (rebirth == -3) {
