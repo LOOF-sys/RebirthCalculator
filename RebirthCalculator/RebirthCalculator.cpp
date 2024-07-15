@@ -942,39 +942,40 @@ int SpoofConsole() {
 std::string RunClock = "start bin\\clock.exe ";
 std::string RunClockHelp = "notepad bin\\help.txt";
 
-std::string PreviousVersion = "1.56";
-std::string Version = "1.57";
-int main() {
-	SetConsoleTitle("RebirthCalculator - Muscle Legends");
+std::string PreviousVersion = "1.57 - final";
+std::string Version = "2.0.0a";
+int main()
+{
+	SetConsoleTitle("Rebirth Calculator - Muscle Legends");
 	SetupChars();
-
 	std::thread EnableRandom(Timer);
 	std::thread NewSpoof(SpoofConsole);
+
 	HWND hwnd = GetConsoleWindow();
-	if (hwnd != NULL) { MoveWindow(hwnd, 100, 100, 1450, 600, TRUE); }
+	if (hwnd) MoveWindow(hwnd, 100, 100, 1450, 600, TRUE);
+
 	int rebirth = 0;
-	while (true) {
+	while (true)
+	{
 		int Lines = 0;
 		std::system("color 07");
 		std::ifstream File;
 		File.open("Credits.txt");
 		std::string Line;
 		SetConsoleTextAttribute(Console, 12);
-		if (File.is_open()) {
-			while (std::getline(File, Line)) {
+		if (File.is_open())
+		{
+			while (std::getline(File, Line))
+			{
 				Lines = Lines + 1;
 				std::cout << Line << std::endl;
 				int CharFoundAtPos = Line.find("_", 1);
-				if (CharFoundAtPos < 0 && CharFoundAtPos>19) {
-					std::exit(0);
-				}
+				if (CharFoundAtPos < 0 && CharFoundAtPos > 19) std::exit(0);
 			}
-			if (Lines != 6) {
-				std::exit(0);
-			}
+			if (Lines != 6) std::exit(0);
 		}
-		else {
-			//SetConsoleTextAttribute(Console, 7);
+		else
+		{
 			SetConsoleTextAttribute(Console, 12);
 			std::cout << "Failed to load .txt resource" << std::endl;
 			SetConsoleTextAttribute(Console, 7);
@@ -984,8 +985,9 @@ int main() {
 		SetConsoleTextAttribute(Console, 7);
 		File.close();
 		std::system("attrib +R Credits.txt");
+
 		/* version magik */
-		std::string RecentUpdates = "(NEW MAJOR FEATURES) type (-7), Changed up the credits a little bit and changed some of the backend shit of the Software, Any bug reports, report them to the discord server https://discord.gg/6Z5BBgDG5b";
+		std::string RecentUpdates = "Unlocked old paywall features, rewriting algorithms probably, contribute to the project @https://github.com/LOOF-sys/RebirthCalculator";
 		std::cout << "\nPrevious Version " << PreviousVersion << std::endl;
 		std::cout << "\nVersion " + Version + ", Keep the window at the automatic set size to ensure correct formatting." << std::endl;
 		/* ============= */
@@ -999,26 +1001,25 @@ int main() {
 		SetConsoleTextAttribute(Console, 7);
 		std::cout << "Type rebirth here: ";
 		std::cin >> rebirth;
-		if (rebirth == 0) {
-			std::system("CLS");
+
+		if (rebirth == 0)
+		{
+			system("cls");
 			std::cout << "Process error.";
-			MessageBox(hwnd, "Thats not a number dude", "RebirthCalculator.exe", MB_ICONERROR);
-			std::exit(0);
+			continue;
 		}
-		if (rebirth >= INT_MAX || rebirth <= INT_MIN) {
-			std::system("CLS");
+
+		if (rebirth >= INT_MAX || rebirth <= INT_MIN)
+		{
+			system("cls");
 			std::cout << "Process error.";
-			MessageBox(hwnd, "That damn number wont fucking glitch anyway, way too fucking high", "RebirthCalculator.exe", MB_ICONERROR);
-			std::exit(0);
+			continue;
 		}
-		if (rebirth == -3) {
-			std::string Code;
-			std::system("CLS");
-			std::cout << "Verification code: ";
-			std::cin >> Code;
-			if (Code != "Verification_Code_1485023_4830038_oPC29__+==+-_-@@33%%^3#_Cypher0F_TRebCalculator__Encryption+KEy__)0") {
-				std::exit(0);
-			}
+
+		if (rebirth == -3)
+		{
+			std::cout << "Strict calculating rebirths (find hidden ones unpublic feature made public)" << std::endl;
+			system("cls");
 			WriteToString_S = "";
 			std::ofstream WriteTo("Strict_All_Rebirths_Output" + std::to_string(FileAmount) + ".txt");
 			std::cout << "Calculating... This should only take a few seconds..." << std::endl;
@@ -1027,12 +1028,14 @@ int main() {
 			WriteTo << WriteToString_S;
 			WriteTo.close();
 			std::string OpenFile = "notepad \"Strict_All_Rebirths_Output" + std::to_string(FileAmount) + ".txt" + "\"";
-			std::system(OpenFile.c_str());
-			std::system("pause");
-			std::system("CLS");
+			system(OpenFile.c_str());
+			system("pause");
+			system("CLS");
 			continue;
 		}
-		if (rebirth == -4) {
+
+		if (rebirth == -4)
+		{
 			WriteToString_S = "";
 			std::ofstream WriteTo("All_Rebirths_Output" + std::to_string(FileAmount) + ".txt");
 			std::cout << "Calculating... This should only take 1/2 minutes..." << std::endl;
@@ -1047,7 +1050,9 @@ int main() {
 			std::system("pause");
 			std::system("CLS");
 		}
-		if (rebirth == -5) {
+
+		if (rebirth == -5)
+		{
 			std::system("CLS");
 			std::string NewLine;
 			std::cout << "Command: ";
@@ -1091,13 +1096,15 @@ int main() {
 				}
 			}
 		}
-		if (rebirth == -6) {
+		if (rebirth == -6)
+		{
 			std::system("CLS");
 			std::cout << "Documentation: " << std::endl;
 			std::cout << "General usage: With this calculator you can calculate all/any rebirth that can glitch in muscle legends with darkstars(unique pets) & muscle king auras (unique auras), to start off type in any number to calculate, Example: type in 30 and it will print every single possible glitchable method and if that rebirth can glitch, what rock is glitches on, the speed it glitches and the xp it needs to glitch." << std::endl;
 			std::system("pause");
 		}
-		if (rebirth == -7) {
+		if (rebirth == -7)
+		{
 			char yes_or_no = 0;
 			int WaitTime = 0;
 			long long int total_health = 0;
@@ -1171,18 +1178,15 @@ int main() {
 			}
 		}
 		std::cout << "Calculating..." << std::endl;
-		if (rebirth > 0 && rebirth < 30) {
+		if (rebirth > 0 && rebirth < 30)
+		{
 			std::cout << "\nYou need atleast 30 rebirths to use a darkstar/muscle king aura so calculating below 30 is useless.\n\n";
 			std::system("pause");
 			std::system("CLS");
 			continue;
 		}
-		if (rebirth != -7 && rebirth != -6 && rebirth != -5 && rebirth != -4 && rebirth != -3) {
-			Calculate(rebirth);
-		}
-		else {
-			std::system("CLS");
-		}
+		if (rebirth != -7 && rebirth != -6 && rebirth != -5 && rebirth != -4 && rebirth != -3) Calculate(rebirth);
+		else std::system("CLS");
 		//std::system("pause");
 	};
 	return 0;
