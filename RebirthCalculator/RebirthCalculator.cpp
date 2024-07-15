@@ -248,7 +248,8 @@ int StatsSystem(int Level, int LEVEL, float Xp, int XpAdded, std::string _PetTyp
 	}
 }
 
-std::string GetGlitchingSpeed(int Level, int LEVEL, float Xp, int XpAdded, std::string _PetType) {
+std::string GetGlitchingSpeed(int Level, int LEVEL, float Xp, int XpAdded, std::string _PetType)
+{
 	int RawLevel = GetAccurateLevel(Xp, LEVEL, _PetType);
 	int NextRawLevel = GetNumberFormattedXp(_PetType, XpAdded);
 
@@ -258,16 +259,19 @@ std::string GetGlitchingSpeed(int Level, int LEVEL, float Xp, int XpAdded, std::
 
 	int Subtract = 0;
 	int NewCount = Level + 1;
-	while (NewCount < 19) {
+	while (NewCount < 19)
+	{
 		NewCount++;
 		Subtract = Subtract + 5;
 	}
-	while (NextRawLevel > 1) {
+	while (NextRawLevel > 1)
+	{
 		NextRawLevel--;
 		Subtract = Subtract + 5;
 	}
 	Answer = Answer - Subtract;
-	if (_PetType == "MuscleKing") {
+	if (_PetType == "MuscleKing")
+	{
 		return "+" + std::to_string(StatsSystem(Level, LEVEL, Xp, XpAdded, _PetType)) + " Stats per punch,";
 	}
 	return "+" + std::to_string(Answer) + " Stats per punch,";
@@ -292,32 +296,15 @@ int Calculate(int rebirth) {
 	float xpAdded = 0;
 	int MuscleKingXpAdded = 0;
 	std::cout << "\n";
-
-	bool Corrupt = false;
-
-	if (ILLEGAL_REBIRTH_NUMBER(rebirth)) {
-		SetConsoleTextAttribute(Console, 12);
-		char Answer;
-		std::cout << "[CAUTION]: THIS REBIRTH HAS BEEN MARKED AS HAZARDOUS AND SHOULD BE AVOIDED DUE TO THE UNEXPECTED BEHAVIOUR IS HAS ON THE CALCULATORS CALCULATIONS, ARE YOU SURE YOU WISH TO\nCONTINUE? Y/N" << std::endl;
-		SetConsoleTextAttribute(Console, 7);
-		std::cin >> Answer;
-		if (Answer != 'Y' && Answer != 'y') {
-			std::system("CLS");
-			return 0;
-		}
-		Corrupt = true;
-	}
-
 	std::cout << "Calculating..." << std::endl;
 
 	// DARKSTAR CALCULATIONS
 	std::ofstream WriteTo(std::to_string(rebirth) + "_Rebirth_Calculations_Output" + std::to_string(FileAmount) + ".txt");
-	if (Corrupt == true) {
-		WriteTo << "CALCULATIONS FLAGGED AS HAZARDOUS, SOME THINGS MAY BE WRONG.\n" << std::endl;
-	}
 	std::system("color 0A");
-	while (xpAdded < 237500) {
-		for (int index = 1; index < 100; index++) {
+	while (xpAdded < 237500)
+	{
+		for (int index = 1; index < 100; index++)
+		{
 			float CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 500 / 2;
 
@@ -422,8 +409,10 @@ int Calculate(int rebirth) {
 	// MUSCLE KING CALCULATIONS
 	std::system("color 0B");
 	WriteTo << "\n[Muscle King Calculations]: A new experimental +Stats Module has been added to replace the old one specifically for Muscle King Auras to \"Attempt\" to fix the problem and further eliminate it, This new module will further update and eventually fix the problem entirely, As of now, the module is not 100% accurate, infact it is only about 60% accurate but the previous one was about 22%. To report any bugs report it to the Discord Server.\n" << std::endl;
-	while (MuscleKingXpAdded < 313500) {
-		for (float index = 1; index < 100; index++) {
+	while (MuscleKingXpAdded < 313500)
+	{
+		for (float index = 1; index < 100; index++)
+		{
 			float CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 500 / 2;
 
@@ -543,7 +532,8 @@ int Calculate(int rebirth) {
 		MuscleKingXpAdded = MuscleKingXpAdded + 5;
 	}
 
-	switch (check) {
+	switch (check)
+	{
 	case false:
 		if (MuscleKingCheck == false) {
 			std::cout << "Your rebirth sadly cannot glitch Darkstar Hunters nor Muscle King Auras on any Rock :(\n" << std::endl;
@@ -567,7 +557,8 @@ int Calculate(int rebirth) {
 	return 0;
 }
 
-int ListCalculate(int rebirth) {
+int ListCalculate(int rebirth)
+{
 	// DARKSTARS 
 	for (float index = 1; index < 50; index++) {
 		float CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -942,8 +933,7 @@ int SpoofConsole() {
 std::string RunClock = "start bin\\clock.exe ";
 std::string RunClockHelp = "notepad bin\\help.txt";
 
-std::string PreviousVersion = "1.57 - final";
-std::string Version = "2.0.0a";
+std::string Version = "2.0.0b";
 int main()
 {
 	SetConsoleTitle("Rebirth Calculator - Muscle Legends");
@@ -987,8 +977,7 @@ int main()
 		std::system("attrib +R Credits.txt");
 
 		/* version magik */
-		std::string RecentUpdates = "Unlocked old paywall features, rewriting algorithms probably, contribute to the project @https://github.com/LOOF-sys/RebirthCalculator";
-		std::cout << "\nPrevious Version " << PreviousVersion << std::endl;
+		std::string RecentUpdates = "contribute to the project @https://github.com/LOOF-sys/RebirthCalculator";
 		std::cout << "\nVersion " + Version + ", Keep the window at the automatic set size to ensure correct formatting." << std::endl;
 		/* ============= */
 
@@ -1018,11 +1007,10 @@ int main()
 
 		if (rebirth == -3)
 		{
-			std::cout << "Strict calculating rebirths (find hidden ones unpublic feature made public)" << std::endl;
 			system("cls");
 			WriteToString_S = "";
 			std::ofstream WriteTo("Strict_All_Rebirths_Output" + std::to_string(FileAmount) + ".txt");
-			std::cout << "Calculating... This should only take a few seconds..." << std::endl;
+			std::cout << "Strict calculating rebirths... (find hidden ones unpublic feature made public)" << std::endl;
 			StrictListCalculate(0);
 			std::cout << "Finished Calculating, Check your desktop for an open notepad window." << std::endl;
 			WriteTo << WriteToString_S;
