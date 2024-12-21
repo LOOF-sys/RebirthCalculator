@@ -242,6 +242,18 @@ int Calculate(int rebirth) {
 		for (int index = 1; index < 100; index++)
 		{
 			float CalculatedXp = 5 * (float)rebirth / 100 + 1;
+			CalculatedXp = CalculatedXp * 1000 / 2;
+
+			CalculatedXp = CalculatedXp * index;
+			CalculatedXp = CalculatedXp + xpAdded;
+			for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+				if (CalculatedXp == AccurateGlitchingNumbers[i])
+				{
+					WriteTo << "Your rebirth can glitch Darkstars on the Ancient Jungle Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, xpAdded, "Darkstar") << " [Darkstar Level " << (GetCurrentLevelAndXp("Darkstar", CalculatedXp) + 1) << "] [" << GetFormattedXp("Darkstar", xpAdded) << "] [" << index << " punches required" << "]" << std::endl;
+					check = true;
+				}
+			};
+			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 500 / 2;
 
 			CalculatedXp = CalculatedXp * index;
@@ -664,6 +676,21 @@ int StrictListCalculate(int rebirth) {
 	// DARKSTARS 
 	int index = 1;
 	float CalculatedXp = 5 * (float)rebirth / 100 + 1;
+	CalculatedXp = CalculatedXp * 500 / 2;
+
+	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
+		CalculatedXp = 5 * (float)rebirth / 100 + 1;
+		CalculatedXp = CalculatedXp * 1000 / 2;
+		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+				WriteToString_S << rebirth << " [Jungle Gym] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << (GetCurrentLevelAndXp("Darkstar", CalculatedXp) + 1) << "]" << "\n";
+			}
+		};
+		rebirth = rebirth + 1;
+	}
+	rebirth = 1;
+	WriteToString_S << "\n";
+	CalculatedXp = 5 * (float)rebirth / 100 + 1;
 	CalculatedXp = CalculatedXp * 500 / 2;
 
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
