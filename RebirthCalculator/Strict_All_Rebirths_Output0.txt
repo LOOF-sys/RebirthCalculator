@@ -4,6 +4,7 @@
 11740 [Jungle Gym] +85 Stats per punch, [Darkstar Level 18, 150 xp]
 13120 [Jungle Gym] +90 Stats per punch, [Darkstar Level 19, 225 xp]
 14580 [Jungle Gym] +95 Stats per punch, [Darkstar Level 20, 250 xp]
+14592 [Jungle Gym] +95 Stats per punch, [Darkstar Level 20, 55 xp] (THEORETICAL)
 
 80 [Muscle King] +5 Stats per punch, [Darkstar Level 2]
 280 [Muscle King] +10 Stats per punch, [Darkstar Level 3]
