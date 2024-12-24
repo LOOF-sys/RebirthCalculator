@@ -180,9 +180,11 @@ int GetCurrentLevelAndXp(std::string _Name, int Xp) {
 
 #define XP_LEFT LeftOverXpFrom_GetNumberFormattedXp
 
-int GetPreviousLevel(float Xp, int Multiplier, std::string petType) {
+int GetPreviousLevel(float Xp, int XpAdded, int Multiplier, std::string petType) {
+	Xp = Xp - XpAdded;
 	Xp = Xp / Multiplier;
 	Xp = Xp * (Multiplier - 1); // revert 1 level back
+	Xp = Xp + XpAdded;
 	int level = 0;
 	if (petType == "Darkstar") {
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++)
@@ -208,7 +210,7 @@ int GetPreviousLevel(float Xp, int Multiplier, std::string petType) {
 // LEVEL is the amount of hits
 std::string GetGlitchingSpeed(int Level, int LEVEL, float Xp, int XpAdded, std::string _PetType)
 {
-	int PreviousLevel = GetPreviousLevel(Xp, LEVEL, _PetType);
+	int PreviousLevel = GetPreviousLevel(Xp, XpAdded, LEVEL, _PetType);
 	int CurrentLevel = GetCurrentLevelAndXp(_PetType, Xp);
 	return "+" + std::to_string((CurrentLevel - PreviousLevel) * 5) + " Stats per punch,";
 }
@@ -242,7 +244,7 @@ int Calculate(int rebirth) {
 		for (int index = 1; index < 100; index++)
 		{
 			float CalculatedXp = 5 * (float)rebirth / 100 + 1;
-			CalculatedXp = CalculatedXp * 1000 / 2;
+			CalculatedXp = CalculatedXp * 650 / 2;
 
 			CalculatedXp = CalculatedXp * index;
 			CalculatedXp = CalculatedXp + xpAdded;
@@ -512,6 +514,16 @@ int ListCalculate(int rebirth)
 	// DARKSTARS 
 	for (float index = 1; index < 50; index++) {
 		float CalculatedXp = 5 * (float)rebirth / 100 + 1;
+		CalculatedXp = CalculatedXp * 650 / 2;
+
+		CalculatedXp = CalculatedXp * index;
+		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
+			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
+				WriteToString_S << rebirth << " [Jungle Gym] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << (GetCurrentLevelAndXp("Darkstar", CalculatedXp) + 1) << "]" << "\n";
+			}
+		};
+
+		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 500 / 2;
 
 		CalculatedXp = CalculatedXp * index;
@@ -596,11 +608,20 @@ int ListCalculate(int rebirth)
 
 	for (float index = 1; index < 20; index++) {
 		float CalculatedXp = 5 * (float)rebirth / 100 + 1;
+		CalculatedXp = CalculatedXp * 650 / 2;
+		CalculatedXp = CalculatedXp * index;
+		for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
+			if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
+				std::cout << rebirth << " [Muscle King] " << GetGlitchingSpeed(i, index, CalculatedXp, 0, "MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, 0, index, "MuscleKing") + 1) << "]" << std::endl;
+			}
+		};
+
+		CalculatedXp = 5 * (float)rebirth / 100 + 1;
 		CalculatedXp = CalculatedXp * 500 / 2;
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
-				std::cout << rebirth << " [Muscle King] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, index, "MuscleKing") + 1) << "]" << std::endl;
+				std::cout << rebirth << " [Muscle King] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, 0, index, "MuscleKing") + 1) << "]" << std::endl;
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -608,7 +629,7 @@ int ListCalculate(int rebirth)
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
-				std::cout << rebirth << " [Legends Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, index, "MuscleKing") + 1) << "]" << std::endl;
+				std::cout << rebirth << " [Legends Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, 0, index, "MuscleKing") + 1) << "]" << std::endl;
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -616,7 +637,7 @@ int ListCalculate(int rebirth)
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
-				std::cout << rebirth << " [Eternal Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, index, "MuscleKing") + 1) << "]" << std::endl;
+				std::cout << rebirth << " [Eternal Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, 0, index, "MuscleKing") + 1) << "]" << std::endl;
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -624,7 +645,7 @@ int ListCalculate(int rebirth)
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
-				std::cout << rebirth << " [Mythical Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, index, "MuscleKing") + 1) << "]" << std::endl;
+				std::cout << rebirth << " [Mythical Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, 0, index, "MuscleKing") + 1) << "]" << std::endl;
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -632,7 +653,7 @@ int ListCalculate(int rebirth)
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
-				std::cout << rebirth << " [Frost Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, index, "MuscleKing") + 1) << "]" << std::endl;
+				std::cout << rebirth << " [Frost Gym] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, 0, index, "MuscleKing") + 1) << "]" << std::endl;
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -640,7 +661,7 @@ int ListCalculate(int rebirth)
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
-				std::cout << rebirth << " [Golden Rock (5K Durability Rock)] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, index, "MuscleKing") + 1) << "]" << std::endl;
+				std::cout << rebirth << " [Golden Rock (5K Durability Rock)] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, 0, index, "MuscleKing") + 1) << "]" << std::endl;
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -648,7 +669,7 @@ int ListCalculate(int rebirth)
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
-				std::cout << rebirth << " [Large Rock (100 Durability Rock)] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, index, "MuscleKing") + 1) << "]" << std::endl;
+				std::cout << rebirth << " [Large Rock (100 Durability Rock)] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, 0, index, "MuscleKing") + 1) << "]" << std::endl;
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -656,7 +677,7 @@ int ListCalculate(int rebirth)
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
-				std::cout << rebirth << " [Punching Rock (10 Durability Rock)] " << GetGlitchingSpeed(i, index, CalculatedXp, 0, "MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, index, "MuscleKing") + 1) << "]" << std::endl;
+				std::cout << rebirth << " [Punching Rock (10 Durability Rock)] " << GetGlitchingSpeed(i, index, CalculatedXp, 0, "MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, 0, index, "MuscleKing") + 1) << "]" << std::endl;
 			}
 		};
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
@@ -664,7 +685,7 @@ int ListCalculate(int rebirth)
 		CalculatedXp = CalculatedXp * index;
 		for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
-				std::cout << rebirth << " [Tiny Gym Rock] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, index, "MuscleKing") + 1) << "]" << std::endl;
+				std::cout << rebirth << " [Tiny Gym Rock] " << GetGlitchingSpeed(i,index,CalculatedXp,0,"MuscleKing") << " [Muscle King Aura Level " << (GetPreviousLevel(CalculatedXp, 0, index, "MuscleKing") + 1) << "]" << std::endl;
 			}
 		};
 	}
@@ -676,11 +697,11 @@ int StrictListCalculate(int rebirth) {
 	// DARKSTARS 
 	int index = 1;
 	float CalculatedXp = 5 * (float)rebirth / 100 + 1;
-	CalculatedXp = CalculatedXp * 500 / 2;
+	CalculatedXp = CalculatedXp * 650 / 2;
 
 	while (CalculatedXp < (AccurateGlitchingNumbers[18] + 1)) {
 		CalculatedXp = 5 * (float)rebirth / 100 + 1;
-		CalculatedXp = CalculatedXp * 1000 / 2;
+		CalculatedXp = CalculatedXp * 650 / 2;
 		for (int i = 0; i < sizeof(AccurateGlitchingNumbers) / sizeof(AccurateGlitchingNumbers[0]); i++) {
 			if (CalculatedXp == AccurateGlitchingNumbers[i]) {
 				WriteToString_S << rebirth << " [Jungle Gym] " << GetGlitchingSpeed(i, index, CalculatedXp, NULL, "Darkstar") << " [Darkstar Level " << (GetCurrentLevelAndXp("Darkstar", CalculatedXp) + 1) << "]" << "\n";
