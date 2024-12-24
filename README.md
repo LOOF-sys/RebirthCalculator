@@ -1,5 +1,6 @@
 # General Info
-* This software is very old and is not created well at all, very slow, very incorrect, very bad algorithms, you name it
+* Most of the issues are fixed now and this tool is now fully accurate now
+* This software is very old and is not created well at all, very slow, very unoptimized algorithms, you name it
 * This software hasnt been updated for literally past a year now and I could care less about trying to, the source code is practically impossible to work with and the game this was created for is a dead game now
 * This software was originally created to help me find broken rebirth in a game called "[Muscle Legends](https://www.roblox.com/games/3623096087/Muscle-Legends)" that would allow you to punch a rock for 3 days straight and level your pet up to an insane amount (dumb as fuck am I right lol)
 * Pretty dumb crappy software but useful for people who like to rebirth on that game thats now a pile of degenerates
