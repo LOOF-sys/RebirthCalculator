@@ -366,6 +366,18 @@ int Calculate(int rebirth) {
 		for (float index = 1; index < 100; index++)
 		{
 			float CalculatedXp = 5 * (float)rebirth / 100 + 1;
+			CalculatedXp = CalculatedXp * 650 / 2;
+
+			CalculatedXp = CalculatedXp * index;
+			CalculatedXp = CalculatedXp + MuscleKingXpAdded;
+			for (int i = 0; i < sizeof(AccurateMuscleKingGlitchingNumbers) / sizeof(AccurateMuscleKingGlitchingNumbers[0]); i++) {
+				if (CalculatedXp == AccurateMuscleKingGlitchingNumbers[i]) {
+					WriteTo << "Your rebirth can glitch Muscle King Auras on the Ancient Jungle Rock! " << GetGlitchingSpeed(i, index, CalculatedXp, MuscleKingXpAdded, "MuscleKing") << " [Muscle King Aura Level " << (GetCurrentLevelAndXp("MuscleKing", CalculatedXp) + 1) << "] [" << GetFormattedXp("Aura", MuscleKingXpAdded) << "] [" << index << " punches required]" << std::endl;
+					MuscleKingCheck = true;
+				}
+			};
+
+			CalculatedXp = 5 * (float)rebirth / 100 + 1;
 			CalculatedXp = CalculatedXp * 500 / 2;
 
 			CalculatedXp = CalculatedXp * index;
